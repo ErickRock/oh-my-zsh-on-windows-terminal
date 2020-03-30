@@ -15,6 +15,10 @@ Eu gosto de utilizar o máximo de tecnologias nativas, por este motivo resolvi e
 
 ## Preparando o ambiente
 
+Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip), ela trará alguns efeitos bem legais ao utlizar simbolos no código ou no terminal. Você pode ver mais detalhes do projeto no perfil deles no [GitHub - Fira Code](https://github.com/tonsky/FiraCode)
+
+Vamos lá.
+
 Você precisará verificar se tem os componentes opcionais do Subsistema do Windows para Linux e da Plataforma de Máquina Virtual instalados. Você pode fazer isso executando o seguinte comando no PowerShell como Administrador:
 
 <kbd>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</kbd>
@@ -119,3 +123,7 @@ Esses são os plugins que utilizo e abaixo explico como funciona cada um deles:
 - <kbd>zsh-users/zsh-completions</kbd>: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
 
 Pronto, já temos um ambiente configurado com ferramentas nativas e com Zsh como shell padrão do Terminal Linux, tudo isso gerenciado dentro do Windows Terminal. Em breve trago algumas personaliações bacanas de adicionar, como deixar o Terminal com efeito acrilico, transparência, opacidade, e inclusive por background com gifs ou imagens estáticas, por enquanto é isso, espero que gostem.
+
+Créditos e links de referência: 
+- [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
+- [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
