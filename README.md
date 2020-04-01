@@ -125,7 +125,7 @@ Esses são os plugins que utilizo e abaixo explico como funciona cada um deles:
 - <kbd>zsh-users/zsh-autosuggestions</kbd>: Sugere comandos baseados no histórico de execução conforme você vai digitando;
 - <kbd>zsh-users/zsh-completions</kbd>: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
 
-Pronto, já temos um ambiente configurado com ferramentas nativas e com Zsh como shell padrão do Terminal Linux, tudo isso gerenciado dentro do Windows Terminal. Em breve trago algumas personalizações bacanas de adicionar, como deixar o Terminal com efeito acrílico, transparência, opacidade, e inclusive por background com gifs ou imagens estáticas, por enquanto é isso, espero que gostem.
+Pronto, já temos um ambiente configurado com ferramentas nativas e com Zsh como shell padrão do Terminal Linux, tudo isso gerenciado dentro do Windows Terminal. Em breve trago algumas personalizações bacanas de adicionar, como deixar o Terminal com efeito acrílico, transparência, opacidade, e inclusive por background com gifs ou imagens estáticas, por enquanto é isso, espero que gostem!
 
 Créditos e links de referência: 
 - [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
