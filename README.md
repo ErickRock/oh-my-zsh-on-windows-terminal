@@ -35,7 +35,7 @@ Após reiniciar abra o Ubuntu 18.04 no menu iniciar e aguarde uns minutos, ele f
 
 Para que tenha um visual mais agradável, vamos fazer algumas alterações visuais no arquivo JSON do Windows Terminal. Para agilizar você pode baixar o arquivo JSON e o ícone que utilizo para a distro diretamente no [meu repositório](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal "Repositório - Oh My Zsh on Windows Terminal"). 
 <p> Com os arquivos baixados, pressione as teclas Windows + R e cole o seguinte diretório
-<kbd>%localappdata%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState</kbd> é dentro dele que você deve copiar o arquivo JSON baixado e substituir o original. Agora copie a pasta <kbd>SysIcon</kbd> para <kbd>C:</kbd> ficará assim <kbd>C:\SysIcon</kbd>.
+<kbd>%AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState</kbd> é dentro dele que você deve copiar o arquivo JSON baixado e substituir o original. Agora copie a pasta <kbd>SysIcon</kbd> para <kbd>C:</kbd> ficará assim <kbd>C:\SysIcon</kbd>.
 Feito isso, seu Windows Terminal já deverá por padrão abrir o terminal Linux, e já estará com o esquema de cores do tema Drácula. 
 
 Por padrão, quando inicamos o Linux direto pelo próprio Ubuntu 18.04, ele abre o diretório <kbd>/home/user</kbd> ou seja, direto dentro do subsistema. Quando iniciamos ele pelo Windows Terminal, ele abre o diretório <kbd>C:\Users\adm\<seuUsuário></kbd>. Isso vai de gosto e preferência, eu prefiro deixar neste padrão mesmo para navegar entre as pastas. 
