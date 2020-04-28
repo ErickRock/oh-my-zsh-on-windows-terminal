@@ -1,4 +1,4 @@
-![](/fundo.png)
+![](/.github/fundo.jpg)
 **Índice**   
 
 - [Introdução](#introdu%c3%a7%c3%a3o)
@@ -105,6 +105,8 @@ SPACESHIP_CHAR_SUFFIX=" "
 Salve o documento, e abra um novo terminal para você ver a diferença.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/eys5p19xzubci13r2hdg.png)
 
+
+![Alt Text](/.github/ex1.png)
 
 
 ## Plugins do ZSH
