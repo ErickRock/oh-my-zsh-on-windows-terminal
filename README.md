@@ -62,7 +62,7 @@ Agora que instalamos o zsh, precisamos torná-lo como terminal padrão na execu�
 No Windows Terminal, digite o seguinte comando pra abrir o arquivo do bash no VSCode: <kbd>code ~/.bashrc</kbd> pode ser que ele instale alguns arquivos do VS Code no Ubuntu, apenas aguarde, em seguida ele abre automaticamente. Caso peça alguma liberação de firewall, permita o acesso.
 
 Dentro do arquivo, adicione na primeira linha o script a seguir:
-```
+```bash
 # if running in terminal...
 if test -t 1; then
 # ...start zsh
@@ -83,7 +83,7 @@ Agora, vamos instalar o tema Spaceship, execute o comando <kbd>cd ~</kbd> e depo
 Por mais que seja muito interessante mostrar as versões do Node, Docker e outros itens no nosso terminal geralmente isso consome processamento e pode tornar mais lento o carregamento de pastas, por isso eu gosto de desabilitar a maioria dessas opções.
 
 Execute <kbd>code ~/.zshrc</kbd> e adicione o seguinte conteúdo:
-```
+```bash
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
