@@ -124,7 +124,7 @@ Ele vai pedir para confirmar o Zsh como shell padrão. Confirme com um `Y` e sua
 Agora, vamos instalar o tema Spaceship, execute o comando `cd ~` e depois 
 
 ```bash
-`git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"`
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
 
 ao final, digite `ls .oh-my-zsh/custom/themes` e dê enter, para verificar se ele criou a pasta `spaceship-prompt`. Se fez as etapas corretamente, a pastará estará lá, você também pode conferir visualmente, abra a estrutura de pastas do WSL Ubuntu. Para verificar isso pressione as teclas **Windows + R** e cole `\\wsl$\Ubuntu\home\usuario\.oh-my-zsh\custom\themes\` dê enter e você será levado direto para a pasta virtualizada do Linux instalado,confirme se a pasta foi criada. Se foi, vamos prosseguir.
@@ -132,7 +132,7 @@ ao final, digite `ls .oh-my-zsh/custom/themes` e dê enter, para verificar se el
 No Windows Terminal execute o comando 
 
 ```bash
-`ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ``` 
 
 Ele vai linkar o tema ao oh-my-zsh. Feito isso execute `code ~/.zshrc` e no campo `ZSH_THEME="robbyrussell"` você insere o nome do tema que quer usar, no caso vamos deixar como `ZSH_THEME="spaceship"`. Outros temas que já vem instalado nativamente que gosto bastante e você pode experimentar é `sonicradish ` e o `godzilla`, é possível deixar esse campo com o valor `ZSH_THEME="random"` também, assim sempre que abrir o terminal ele aplicará um tema diferente, foi assim que descobri estes outros dois.
