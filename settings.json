@@ -34,9 +34,9 @@
             // Put settings here that you want to apply to all profiles.
             "colorScheme" : "Dracula",
             "fontFace": "Fira Code",
-            "fontSize": 8,
+            "fontSize": 10,
             // "startingDirectory" : "%USERPROFILE%",
-            "useAcrylic" : false,
+            "useAcrylic" : true,
             "cursorColor" : "#FFFFFF"
             
           
@@ -55,14 +55,10 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "name": "Prompt de comando",
                 "commandline": "cmd.exe",
-                "hidden": false
-            },
-            {
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl",
-                "icon":"C:/SysIcon/Ubuntu.png"
+                "colorScheme": "Dracula CMD",
+                "useAcrylic": false,
+                "background": "#21222C"
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -103,6 +99,28 @@
             "red" : "#FF5555",
             "white" : "#F8F8F2",
             "yellow" : "#F1FA8C"
+        },
+
+        {
+            "name" : "Dracula CMD",
+                "background" : "#282A36",
+                "black" :  "#21222C",
+                "blue" : "#BD93F9",
+                "brightBlack" : "#6272A4",
+                "brightBlue" : "#D6ACFF",
+                "brightCyan" : "#A4FFFF",
+                "brightGreen" : "#69FF94",
+                "brightPurple" : "#FF92DF",
+                "brightRed" : "#FF6E6E",
+                "brightWhite" : "#FFFFFF",
+                "brightYellow" : "#FFFFA5",
+                "cyan" : "#8BE9FD",
+                "foreground" : "#F8F8F2",
+                "green" : "#50FA7B",
+                "purple" : "#FF79C6",
+                "red" : "#FF5555",
+                "white" : "#F8F8F2",
+                "yellow" : "#F1FA8C"
         }
     ],
 
