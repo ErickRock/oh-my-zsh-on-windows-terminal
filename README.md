@@ -1,204 +1,198 @@
 ![](/.github/fundo.gif)
 
-**Índice**   
+**Índice**
 
-- [Introdução](#introdu%c3%a7%c3%a3o)
-- [Preparando o ambiente](#preparando-o-ambiente)
-- [Personalizando o Windows Terminal](#personalizando-o-windows-terminal)
-- [Atualizando a distro](#atualizando-a-distro)
-- [Instalando o oh-my-zsh](#instalando-o-oh-my-zsh)
-- [Configurando o Spaceship](#configurando-o-spaceship)
-- [Plugins do ZSH](#plugins-do-zsh)
+- [Requisitos mínimos](#requisitos-m%c3%adnimos)
+  - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl)
+  - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf)
+  - [Habilite o Hyper-V e o WSL via Powershell Admin](#habilite-o-hyper-v-e-o-wsl-via-powershell-admin)
+  - [Instale uma Distro linux](#instale-uma-distro-linux)
+  - [Instale o Windows Terminal](#instale-o-windows-terminal)
+  - [Atualizando o Kernel Linux no Windows](#atualizando-o-kernel-linux-no-windows)
+    - [Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)](#migrar-a-distro-existente-para-wsl-2-utilizar%c3%a1-o-kernel-nativo-do-linux-no-windows)
+- [Utilizando o Linux](#utilizando-o-linux)
+  - [Execute o script de instalação do ZSH](#execute-o-script-de-instala%c3%a7%c3%a3o-do-zsh)
+    - [Execute o script de instalação do ZSH Tools + Pluguins](#execute-o-script-de-instala%c3%a7%c3%a3o-do-zsh-tools--pluguins)
+    - [Tema Spaceship](#tema-spaceship)
+    - [Instalando](#instalando)
+    - [Crie o link simbólico](#crie-o-link-simb%c3%b3lico)
+    - [Ativando o tema](#ativando-o-tema)
+    - [Pluguins inclusos](#pluguins-inclusos)
+- [Dicas](#dicas)
 
-## Introdução
+# Requisitos mínimos
+- Windows 10 Versão 2004
+- - Hyper-V ativado
+- - Subsistema do Windows para Linux ativado
+- - Uma distribuição Linux instalada
+- - Fonte Firacode instalado
+- - Visual Studio Code
+- Uma distribuição linux instalada
 
-Eu gosto de utilizar o máximo de tecnologias nativas, por este motivo resolvi escrever este artigo, vamos utilizar o Windows Terminal (Preview) que permite abrir vários terminais em abas, além do subsistema do Linux para Windows 10, onde você vai instalar uma distro Linux disponível na Microsoft Store e a partir dessa distro nós vamos instalar o Oh my Zsh, deixando ele como bash padrão do Terminal Linux.
+## Visual Studio Code + Remote WSL
 
-## Preparando o ambiente
+Baixe e instale o <a href="https://code.visualstudio.com/Download">Visual Studio Code</a>. 
+Após instalar o VS Code, instale também um pluguin chamado <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL </a>. Ele servirá para abrir e editar arquivos do Linux de forma visual, sem precisar utilizar nano, vim e afins. O atalho para salvar arquivos que fora editados é `Ctrl + S`
 
-Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip), ela trará alguns efeitos bem legais ao utilizar símbolos no código ou no terminal. Você pode ver mais detalhes do projeto no perfil deles no [GitHub - Fira Code](https://github.com/tonsky/FiraCode)
+## Baixe e instale a fonte FiraCode Light TTF
+<a href="https://github.com/tonsky/FiraCode/releases/download/4/Fira_Code_v4.zip"><img src="https://raw.githubusercontent.com/tonsky/FiraCode/master/extras/download.png" width="520" height="130"></a>
 
-Vamos lá.
-
-Você precisará verificar se possui os componentes opcionais do Subsistema do Windows para Linux e da Plataforma de Máquina Virtual instalados. Você pode fazer isso executando o seguinte comando no PowerShell como Administrador:
-
-```powershell
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-```
+## Habilite o Hyper-V e o WSL via Powershell Admin
 
 ```powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-Agora, precisamos [instalar o Windows Terminal Preview do Windows 10](https://www.microsoft.com/pt-br/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab "Baixar Windows Terminal Preview") não há segredo, assim que abrir o link ele acima o navegador solicitará permissão para abrir a Microsoft Store do Windows 10, aceite e clique em instalar. O Windows Terminal é uma aplicação open source da Microsoft que permite a abertura de múltiplos terminais na mesma janela, além de possuir uma gama de customização visual bem ampla através de um arquivo JSON, que vou ensinar mais pra frente. 
+![](/.github/pws1.png)
 
-Agora, precisamos de uma distro Linux, que também é disponibilizada via Microsoft Store. Eu estou usando o [Linux Ubuntu LTS](https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab "Baixar Linux Ubuntu LTS"), o processo de instalação é o mesmo do Windows Terminal. Após instalado ele aparecerá na lista do menu iniciar como Ubuntu, mas ainda não é possível utilizar, pois precisamos reiniciar a máquina para que as configurações que fizemos no início tenham efeito e ative corretamente a máquina virtual juntamente com o subsistema do Linux.
-
-Após reiniciar abra o Ubuntu no menu iniciar e aguarde uns minutos, ele fará download dos arquivos restantes do sistema, ao terminar você fará o processo de criar um nome de usuário e definir uma senha. Feito isso, já podemos utilizar ele dentro do Windows Terminal.
-
-## Personalizando o Windows Terminal
-
-Para que tenha um visual mais agradável, vamos fazer algumas alterações visuais no arquivo JSON do Windows Terminal. Para agilizar você pode baixar o arquivo **settings.json** e o ícone que utilizo para a distro diretamente no [meu repositório](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal "Repositório - Oh My Zsh on Windows Terminal"). 
-<p> Com os arquivos baixados, pressione as teclas Windows + R e cole o seguinte diretório
-
-```
-C:\Users\users\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
+```powershell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
- é dentro dele que você deve copiar o arquivo JSON baixado e substituir o original. Agora copie a pasta `SysIcon` para `C:` ficará assim `C:\SysIcon`.
-Feito isso, seu Windows Terminal já deverá por padrão abrir o terminal Linux, e já estará com o esquema de cores do tema Drácula. 
+![](/.github/pws2.png)
 
-## Atualizando a distro
+**OBS: Algumas máquinas é necessário habilitar a virtualização na bios também**
 
-Abra o Windows Terminal, digite `cd ~` para irmos ao diretório de usuário Linux. Entre com o comando 
+## Instale uma Distro linux
+<a href="https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?SilentAuth=1&wa=wsignin1.0&activetab=pivot:overviewtab"><img src="https://store-images.s-microsoft.com/image/apps.63954.13510798887446365.018f40a9-2b3c-4ff8-bb22-6247f3e8bb82.2b3e22de-e0e8-4c6d-bac4-cf78a8b03158?mode=scale&q=90&h=270&w=270&background=%23E95420" width="200" height="200"></a>
+
+## Instale o Windows Terminal
+
+<a href="https://www.microsoft.com/pt-br/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab"><img src="https://store-images.s-microsoft.com/image/apps.22832.13926773940052066.96ea379b-9e7a-49f1-8cee-25ed75770e30.dcdc888f-85a5-4182-8126-245f0757ef3a?mode=scale&q=90&h=300&w=200" width="200" height="300"></a>
+
+## Atualizando o Kernel Linux no Windows
+
+Caso você não faça parte do Windows Insider, você pode entrar utilizando o arquivo <a href="https://github.com/ErickRock/zsh-script/releases/download/3.1/insiderlocalacc.bat">insiderlocalacc.bat </a>, recomendo que use o canal release preview, por ter menos bugs e sempre estar muito próxima da versão Pública.
+Após atualizar o sistema, atualize o Kernel do Linux no Windows, <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Baixe o pacote de atualização do último kernel do Linux para o WSL 2 para computadores x64</a>.
+
+### Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)
+
+Com o update instalado, execute o Powershell como Admin e digite `wsl -l -v`, este comando listará suas distros Linux instaladas, e qual WSL está usando. 
+
+![](/.github/wsl1.png)
+
+Agora digite `wsl --set-version <distro name> 2` substitua distro name pelo nome da sua distro, sem os sinais <> ,a migração para WSL 2 iniciará, e ao fim disso poderá usar o Linux no Windows 10x mais rápido do que a versão WSL 1 que estava instalada antes.
+
+![](/.github/wsl2.png)
+
+# Utilizando o Linux
+
+Com todo ambiente instalado e configurado, você já pode abrir o Windows Terminal, e iniciar a distro que instalou normalmente em novas abas.
+
+## Execute o script de instalação do ZSH
 
 ```bash
-sudo apt-get update
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/zsh-script/master/zsh-install.sh)"
 ```
 
-Para fazer o fetch do que precisa ser atualizado Leva um tempo.
+![](/.github/zshinstall.png)
 
-Após finalizado o fetch, entre com o comando 
+Ao fim do comando, feche o terminal e abra novamente.
+
+Entre com a opção 2 e tecle enter. Feche o no fim do processo. Abra ele novamente para continuar os comandos seguintes.
+
+![](/.github/default.png)
+
+### Execute o script de instalação do ZSH Tools + Pluguins
 
 ```bash
-sudo apt-get upgrade
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/zsh-script/master/tools-zsh-install.sh)" -y
 ```
 
-Ele irá pedir uma confirmação da ação. Confirme com `Y`. Vai demorar bastante. No meio da instalação, é capaz que ele pergunte para ter permissão de reiniciar alguns serviços. Basta confirmar com um`yes`.
+![](/.github/zshtools.png)
 
-Quando terminar, teremos nosso Ubuntu pronto. Ou quase. Falta atualizar o Git no Ubuntu.
+Nessa seguinte tela entre com `exit` e tecle enter para o sript continuar.
 
-Para atualizar o Git no Ubuntu, devemos adicionar um PPA:
+![](/.github/exit.png)
+
+### Tema Spaceship
+
+<h1 align="center">
+  <a href="https://github.com/denysdovhan/spaceship-prompt">
+    <img alt="spaceship →~ prompt" src="https://cloud.githubusercontent.com/assets/3459374/21679181/46e24706-d34b-11e6-82ee-5efb3d2ba70f.png" width="400">
+  </a>
+  <br>🚀⭐ Spaceship ZSH <br>
+</h1>
+
+<h4 align="center">
+  <a href="http://zsh.org" target="_blank"><code>Zsh</code></a> prompt for Astronauts.
+</h4>
+
+<p align="center">
+  <!-- NPM Version -->
+    <a href="https://npmjs.org/package/spaceship-prompt">
+    <img src="https://img.shields.io/npm/v/spaceship-prompt.svg?style=flat-square"
+      alt="NPM Version" />
+  </a>
+
+  <a href="https://travis-ci.org/denysdovhan/spaceship-prompt">
+    <img src="https://img.shields.io/travis/denysdovhan/spaceship-prompt.svg?style=flat-square"
+      alt="CI Status" />
+  </a>
+
+  <a href="http://zsh.org/">
+    <img src="https://img.shields.io/badge/zsh-%3E%3Dv5.2-777777.svg?style=flat-square"
+      alt="Zsh Version" />
+  </a>
+
+  <a href="https://twitter.com/SpaceshipZSH">
+    <img src="https://img.shields.io/badge/twitter-%40SpaceshipZSH-00ACEE.svg?style=flat-square"
+      alt="Spaceship ZSH Twitter" />
+  </a>
+
+  <a href="https://patreon.com/denysdovhan">
+    <img src="https://img.shields.io/badge/support-patreon-F96854.svg?style=flat-square"
+      alt="Donate" />
+  </a>
+</p>
+
+<div align="center">
+  <h4>
+    <a href="https://denysdovhan.com/spaceship-prompt/">Website</a> |
+    <a href="#instalando">Instalando</a> |
+    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/README.md#features">Features</a> |
+    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md">Opções</a> |
+    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/API.md">API</a>
+  </h4>
+</div>
+
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://denysdovhan.com">Denys Dovhan</a> and
+  <a href="https://github.com/denysdovhan/spaceship-prompt/graphs/contributors">contributors </a>
+</div>
+
+### Instalando
 
 ```bash
-sudo add-apt-repository ppa:git-core/ppa
+sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
+![](/.github/space-download.png)
 
-Ele vai pedir para confirmar pressionando o Enter.
-Quando finalizar, entre com o comando de update: 
+### Crie o link simbólico
 
 ```bash
-sudo apt update; sudo apt install git
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
+![](/.github/space-link.png)
 
-## Instalando o oh-my-zsh
+### Ativando o tema
 
-Com o Windows Terminal aberto no Ubuntu, execute o comando 
+Digite code `code ~/.zshrc` e tecle enter que abrirá o VS Code para editar o arquivo, edite o campo `ZSH_THEME="fino"` para `ZSH_THEME="spaceship"` e salve. Pronto, você acabou de mudar o tema.
 
-```bash
-sudo apt-get install zsh
-```
+![](/.github/spaceship.gif)
 
- Digite sua senha caso seja necessário e confirme a instalação. 
- Enquanto instala, abra o seu VSCode e instale a extensão do [**Remote - WSL**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl "Remote - WSL Marktplace VsCode"). Depois de instalado, feche o VSCode.
+### Pluguins inclusos
 
-Agora que instalamos o zsh, precisamos torná-lo como terminal padrão na execução do shell. É muito importante este passo. Se não configurado corretamente, o Windows Terminal vai abrir o bash padrão ao invés do zsh.
+Esses são os plugins inclusos e abaixo explico como funciona cada um deles:
 
-No Windows Terminal, digite o seguinte comando pra abrir o arquivo do bash no VSCode: 
-
-```bash
-code ~/.bashrc
-```
-Pode ser que ele instale alguns arquivos do VS Code no Ubuntu, apenas aguarde, em seguida ele abre automaticamente. Caso peça alguma liberação de firewall, permita o acesso.
-
-Dentro do arquivo, adicione na primeira linha o script a seguir:
-
-```bash
-# if running in terminal...
-if test -t 1; then
-# ...start zsh
-exec zsh
-fi
-```
-
-**Obs**: Tem que ser na primeira linha, mesmo. Se fizer no final do arquivo, pode conflitar com outra condição.
-
-Salve o arquivo, feche-o e feche também o VSCode.
-
-No terminal do Ubuntu, execute o seguinte comando para instalar o oh-my-zsh: 
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-Ele vai pedir para confirmar o Zsh como shell padrão. Confirme com um `Y` e sua senha.
-
-Agora, vamos instalar o tema Spaceship, execute o comando `cd ~` e depois 
-
-```bash
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-```
-
-Ao final, digite `ls .oh-my-zsh/custom/themes` e dê enter, para verificar se ele criou a pasta `spaceship-prompt`. Se fez as etapas corretamente, a pastará estará lá, você também pode conferir visualmente, abra a estrutura de pastas do WSL Ubuntu. Para verificar isso pressione as teclas **Windows + R** e cole `\\wsl$\Ubuntu\home\usuario\.oh-my-zsh\custom\themes\` dê enter e você será levado direto para a pasta virtualizada do Linux instalado,confirme se a pasta foi criada. Se foi, vamos prosseguir.
-
-No Windows Terminal execute o comando 
-
-```bash
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-``` 
-
-Ele vai linkar o tema ao oh-my-zsh. Feito isso execute `code ~/.zshrc` e no campo `ZSH_THEME="robbyrussell"` você insere o nome do tema que quer usar, no caso vamos deixar como `ZSH_THEME="spaceship"`. Outros temas que já vem instalado nativamente que gosto bastante e você pode experimentar é `sonicradish ` e o `godzilla`, é possível deixar esse campo com o valor `ZSH_THEME="random"` também, assim sempre que abrir o terminal ele aplicará um tema diferente, foi assim que descobri estes outros dois.
-
-## Configurando o Spaceship
-
-Por mais que seja muito interessante mostrar as versões do Node, Docker e outros itens no nosso terminal geralmente isso consome processamento e pode tornar mais lento o carregamento de pastas, por isso eu gosto de desabilitar a maioria dessas opções.
-
-Execute `code ~/.zshrc` e adicione o seguinte conteúdo:
-
-```bash
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="->"
-SPACESHIP_CHAR_SUFFIX=" "
-```
-
-Salve o documento, e abra um novo terminal para você ver a diferença.
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/eys5p19xzubci13r2hdg.png)
-
-
-![Alt Text](/.github/ex1.png)
-
-
-## Plugins do ZSH
-
-Existem alguns plugins bem legais para o Oh My Zsh que facilitam muito na hora de executar comandos comuns, realizar autocompletes, etc...
-
-Para instalar plugins precisamos configurar o ZInit, ferramenta que facilita a instalação e remoção de plugins no Zsh. Execute o comando
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-``` 
-
-confirme a instalação até o fim.
-
-Após essa instalação, vamos abrir o arquivo ~/.zshrc novamente executando `code ~/.zshrc` e abaixo da linha `### End of ZInit's installer chunk` que foi adicionada automaticamente no arquivo, adicionamos o seguinte código:
-
-```bash
-zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-```
-
-Esses são os plugins que utilizo e abaixo explico como funciona cada um deles:
-
-- `zdharma/fast-syntax-highlighting`: Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta;
-- `zsh-users/zsh-autosuggestions`: Sugere comandos baseados no histórico de execução conforme você vai digitando;
+- `zdharma/fast-syntax-highlighting`: Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta.
+- `zsh-users/zsh-autosuggestions`: Sugere comandos baseados no histórico de execução conforme você vai digitando.
 - `zsh-users/zsh-completions`: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
 
-Pronto, já temos um ambiente configurado com ferramentas nativas e com Zsh como shell padrão do Terminal Linux, tudo isso gerenciado dentro do Windows Terminal. Em breve trago algumas personalizações bacanas de adicionar, como deixar o Terminal com efeito acrílico, transparência, opacidade, e inclusive por background com gifs ou imagens estáticas, por enquanto é isso, espero que gostem!
+# Dicas
+
+Você pode acessar toda a estrutura de arquivos da Distro instalada no caminho `\\wsl$` da mesma forma que acessa um servidor, pasta e etc. É possível deixar um mapeamento de rede deste caminho caso preferir.
 
 Créditos e links de referência: 
 
