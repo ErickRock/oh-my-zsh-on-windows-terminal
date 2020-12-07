@@ -200,5 +200,6 @@ Esses são os plugins que utilizo e abaixo explico como funciona cada um deles:
 Pronto, já temos um ambiente configurado com ferramentas nativas e com Zsh como shell padrão do Terminal Linux, tudo isso gerenciado dentro do Windows Terminal. Em breve trago algumas personalizações bacanas de adicionar, como deixar o Terminal com efeito acrílico, transparência, opacidade, e inclusive por background com gifs ou imagens estáticas, por enquanto é isso, espero que gostem!
 
 Créditos e links de referência: 
+
 - [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
 - [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
