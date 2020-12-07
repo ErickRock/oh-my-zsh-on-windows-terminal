@@ -1,4 +1,4 @@
-<img style="float: right;" src="/.github/fundo.jpg">
+<div img style="text-align:center"><img src="/.github/fundo.jpg"/></div>
 
 **Índice**   
 
