@@ -1,4 +1,5 @@
-![](/.github/fundo.jpg)
+<img style="float: right;" src="/.github/fundo.jpg">
+
 **Índice**   
 
 - [Introdução](#introdu%c3%a7%c3%a3o)
