@@ -1,4 +1,4 @@
-<div img style="text-align:center"><img src="/.github/fundo.jpg"/></div>
+![](/.github/fundo.jpg) !
 
 **Índice**   
 
