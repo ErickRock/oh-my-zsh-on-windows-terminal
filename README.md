@@ -19,7 +19,7 @@ Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/
 
 Vamos lá.
 
-Você precisará verificar se tem os componentes opcionais do Subsistema do Windows para Linux e da Plataforma de Máquina Virtual instalados. Você pode fazer isso executando o seguinte comando no PowerShell como Administrador:
+Você precisará verificar se possui os componentes opcionais do Subsistema do Windows para Linux e da Plataforma de Máquina Virtual instalados. Você pode fazer isso executando o seguinte comando no PowerShell como Administrador:
 
 ```powershell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -31,9 +31,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 Agora, precisamos [instalar o Windows Terminal Preview do Windows 10](https://www.microsoft.com/pt-br/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab "Baixar Windows Terminal Preview") não há segredo, assim que abrir o link ele acima o navegador solicitará permissão para abrir a Microsoft Store do Windows 10, aceite e clique em instalar. O Windows Terminal é uma aplicação open source da Microsoft que permite a abertura de múltiplos terminais na mesma janela, além de possuir uma gama de customização visual bem ampla através de um arquivo JSON, que vou ensinar mais pra frente. 
 
-Agora, precisamos de uma distro Linux, que também é disponibilizada na Microsoft Store. Eu estou usando o [Linux Ubuntu LTS](https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab "Baixar Linux Ubuntu LTS"), o processo de instalação é o mesmo do Windows Terminal. Após instalado ele aparecerá na lista do menu iniciar como Ubuntu, mas ainda não possível utilizar, pois precisamos reiniciar a máquina para que as configurações que fizemos no início tenham efeito e ative corretamente a máquina virtual juntamente com o subsistema do Linux.
+Agora, precisamos de uma distro Linux, que também é disponibilizada via Microsoft Store. Eu estou usando o [Linux Ubuntu LTS](https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab "Baixar Linux Ubuntu LTS"), o processo de instalação é o mesmo do Windows Terminal. Após instalado ele aparecerá na lista do menu iniciar como Ubuntu, mas ainda não é possível utilizar, pois precisamos reiniciar a máquina para que as configurações que fizemos no início tenham efeito e ative corretamente a máquina virtual juntamente com o subsistema do Linux.
 
-Após reiniciar abra o Ubuntu no menu iniciar e aguarde uns minutos, ele fará download dos arquivos restantes do sistema, ao terminar você fará o processo de criar um nome de usuário e definir uma senha de usuário. Feito isso, já podemos utilizar ele dentro do Windows Terminal.
+Após reiniciar abra o Ubuntu no menu iniciar e aguarde uns minutos, ele fará download dos arquivos restantes do sistema, ao terminar você fará o processo de criar um nome de usuário e definir uma senha. Feito isso, já podemos utilizar ele dentro do Windows Terminal.
 
 ## Personalizando o Windows Terminal
 
@@ -55,7 +55,7 @@ Abra o Windows Terminal, digite `cd ~` para irmos ao diretório de usuário Linu
 sudo apt-get update
 ```
 
-para fazer o fetch do que precisa ser atualizado Leva um tempo.
+Para fazer o fetch do que precisa ser atualizado Leva um tempo.
 
 Após finalizado o fetch, entre com o comando 
 
@@ -63,7 +63,7 @@ Após finalizado o fetch, entre com o comando
 sudo apt-get upgrade
 ```
 
-Ele irá pedir uma confirmação da ação. Confirme com `Y`. Vai demorar bastante. No meio da instalação, é capaz que ele pergunte para ter permissão para reiniciar alguns serviços. Basta confirmar com um`yes`.
+Ele irá pedir uma confirmação da ação. Confirme com `Y`. Vai demorar bastante. No meio da instalação, é capaz que ele pergunte para ter permissão de reiniciar alguns serviços. Basta confirmar com um`yes`.
 
 Quando terminar, teremos nosso Ubuntu pronto. Ou quase. Falta atualizar o Git no Ubuntu.
 
@@ -88,7 +88,8 @@ Com o Windows Terminal aberto no Ubuntu, execute o comando
 sudo apt-get install zsh
 ```
 
- digite sua senha caso seja necessário e confirme a instalação. Enquanto instala, abra o seu VSCode e instale a extensão do [**Remote - WSL**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl "Remote - WSL Marktplace VsCode"). Depois de instalado, feche o VSCode.
+ Digite sua senha caso seja necessário e confirme a instalação. 
+ Enquanto instala, abra o seu VSCode e instale a extensão do [**Remote - WSL**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl "Remote - WSL Marktplace VsCode"). Depois de instalado, feche o VSCode.
 
 Agora que instalamos o zsh, precisamos torná-lo como terminal padrão na execução do shell. É muito importante este passo. Se não configurado corretamente, o Windows Terminal vai abrir o bash padrão ao invés do zsh.
 
@@ -97,7 +98,7 @@ No Windows Terminal, digite o seguinte comando pra abrir o arquivo do bash no VS
 ```bash
 code ~/.bashrc
 ```
-pode ser que ele instale alguns arquivos do VS Code no Ubuntu, apenas aguarde, em seguida ele abre automaticamente. Caso peça alguma liberação de firewall, permita o acesso.
+Pode ser que ele instale alguns arquivos do VS Code no Ubuntu, apenas aguarde, em seguida ele abre automaticamente. Caso peça alguma liberação de firewall, permita o acesso.
 
 Dentro do arquivo, adicione na primeira linha o script a seguir:
 
@@ -127,7 +128,7 @@ Agora, vamos instalar o tema Spaceship, execute o comando `cd ~` e depois
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
 
-ao final, digite `ls .oh-my-zsh/custom/themes` e dê enter, para verificar se ele criou a pasta `spaceship-prompt`. Se fez as etapas corretamente, a pastará estará lá, você também pode conferir visualmente, abra a estrutura de pastas do WSL Ubuntu. Para verificar isso pressione as teclas **Windows + R** e cole `\\wsl$\Ubuntu\home\usuario\.oh-my-zsh\custom\themes\` dê enter e você será levado direto para a pasta virtualizada do Linux instalado,confirme se a pasta foi criada. Se foi, vamos prosseguir.
+Ao final, digite `ls .oh-my-zsh/custom/themes` e dê enter, para verificar se ele criou a pasta `spaceship-prompt`. Se fez as etapas corretamente, a pastará estará lá, você também pode conferir visualmente, abra a estrutura de pastas do WSL Ubuntu. Para verificar isso pressione as teclas **Windows + R** e cole `\\wsl$\Ubuntu\home\usuario\.oh-my-zsh\custom\themes\` dê enter e você será levado direto para a pasta virtualizada do Linux instalado,confirme se a pasta foi criada. Se foi, vamos prosseguir.
 
 No Windows Terminal execute o comando 
 

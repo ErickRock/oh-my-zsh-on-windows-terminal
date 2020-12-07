@@ -8,7 +8,7 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "requestedTheme" : "system",
     "showTabsInTitlebar" : true,
     "showTerminalTitleInTitlebar" : true,
@@ -38,8 +38,6 @@
             // "startingDirectory" : "%USERPROFILE%",
             "useAcrylic" : true,
             "cursorColor" : "#FFFFFF"
-            
-          
         },
         "list":
         [
@@ -48,7 +46,8 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
-                "hidden": false
+                "hidden": false,
+                "useAcrylic": false
             },
             {
                 // Make changes here to the cmd.exe profile.
@@ -72,6 +71,20 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu 20.04",
+                "source": "Windows.Terminal.Wsl",
+                "icon":"C:/SysIcon/Ubuntu.png"
+            },
+            {
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "name": "Kali Linux",
+                "source": "Windows.Terminal.Wsl",
+                "icon":"C:/SysIcon/Kali.png"
             }
         ]
     },
