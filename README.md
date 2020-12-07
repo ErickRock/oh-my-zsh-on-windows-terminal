@@ -35,6 +35,9 @@ Baixe e instale o <a href="https://code.visualstudio.com/Download">Visual Studio
 Após instalar o VS Code, instale também um pluguin chamado <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL </a>. Ele servirá para abrir e editar arquivos do Linux de forma visual, sem precisar utilizar nano, vim e afins. O atalho para salvar arquivos que fora editados é `Ctrl + S`
 
 ## Baixe e instale a fonte FiraCode Light TTF
+
+Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip), ela trará alguns efeitos bem legais ao utilizar símbolos no código ou no terminal. Você pode ver mais detalhes do projeto no perfil deles no [GitHub - Fira Code](https://github.com/tonsky/FiraCode)
+
 <a href="https://github.com/tonsky/FiraCode/releases/download/4/Fira_Code_v4.zip"><img src="https://raw.githubusercontent.com/tonsky/FiraCode/master/extras/download.png" width="520" height="130"></a>
 
 ## Habilite o Hyper-V e o WSL via Powershell Admin
@@ -62,8 +65,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 ## Atualizando o Kernel Linux no Windows
 
-Caso você não faça parte do Windows Insider, você pode entrar utilizando o arquivo <a href="https://github.com/ErickRock/zsh-script/releases/download/3.1/insiderlocalacc.bat">insiderlocalacc.bat </a>, recomendo que use o canal release preview, por ter menos bugs e sempre estar muito próxima da versão Pública.
-Após atualizar o sistema, atualize o Kernel do Linux no Windows, <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Baixe o pacote de atualização do último kernel do Linux para o WSL 2 para computadores x64</a>.
+Atualize o Kernel do Linux no Windows, <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Baixe o pacote de atualização do kernel do Linux para o WSL 2 para computadores x64</a>.
 
 ### Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)
 
@@ -82,7 +84,7 @@ Com todo ambiente instalado e configurado, você já pode abrir o Windows Termin
 ## Execute o script de instalação do ZSH
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/zsh-script/master/zsh-install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/zsh-install.sh)"
 ```
 
 ![](/.github/zshinstall.png)
@@ -96,7 +98,7 @@ Entre com a opção 2 e tecle enter. Feche o no fim do processo. Abra ele novame
 ### Execute o script de instalação do ZSH Tools + Pluguins
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/zsh-script/master/tools-zsh-install.sh)" -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/tools-zsh-install.sh)" -y
 ```
 
 ![](/.github/zshtools.png)
