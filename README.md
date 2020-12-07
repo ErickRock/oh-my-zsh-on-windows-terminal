@@ -1,4 +1,4 @@
-![](/.github/fundo.gif) !
+![](/.github/fundo.gif)
 
 **Índice**   
 
