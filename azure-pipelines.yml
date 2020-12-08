@@ -21,5 +21,5 @@ steps:
 -   script: |
       sh zsh-install.sh
       2
-      sh tools-zsh-install.sh
+      done
     displayName: 'Executando script mutiplo'
