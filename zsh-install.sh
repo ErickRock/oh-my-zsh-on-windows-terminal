@@ -48,4 +48,5 @@ fi
 
 echo -e "\e[00;32mInstalação do Git e ZSH concluída com Êxito!!\e[00m"
 echo -e "\e[00;32mFeche o terminal e abra novamente!!\e[00m"
-exit 1
+
+zsh
