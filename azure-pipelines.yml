@@ -20,6 +20,5 @@ steps:
 
 - task: Bash@3
   inputs:
-    filePath: '.\zsh-install.sh'
+    filePath: 'sh ./tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    noRc: false
