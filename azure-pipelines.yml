@@ -10,8 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Iniciando script!
-  displayName: 'Exibindo msg'
+- script: sh zsh-install.sh
+  displayName: 'zsh-install.sh'
 
 
 - task: Bash@3
@@ -19,7 +19,5 @@ steps:
     filePath: '$(Build.SourcesDirectory)/zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
-      sh zsh-install.sh
-      2
-      done
-    displayName: 'Executando script mutiplo'
+      sh tools-zsh-install.sh
+    displayName: 'tools-zsh-install.sh'
