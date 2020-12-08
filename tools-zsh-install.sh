@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 #Setando o tema para spaceship e iniciando o zsh
 #Alterado para o fino pois o Spaceship está com o erro nos comentários acima
-sed -i 's/robbyrussell/spaceship/' ~/.zshrc
+sed -i 's/robbyrussell/fino/' ~/.zshrc
 
 #Adição de configuração do spaceship no arquivo ~/.zshrc
 echo '#Configuração da interface do terminal
@@ -57,5 +57,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/i
 sudo echo "zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions" >> ~/.zshrc
-
-zsh
