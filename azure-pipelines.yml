@@ -16,12 +16,10 @@ steps:
 
 - task: Bash@3
   inputs:
-    filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
+    filePath: '$(Build.SourcesDirectory)/zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
+      sh zsh-install.sh
+      2
       sh tools-zsh-install.sh
-      zsh
-      y
-      return
-      done
     displayName: 'Executando script mutiplo'

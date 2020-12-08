@@ -59,3 +59,5 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions" >> ~/.zshrc
 
 zsh
+
+exit 1
