@@ -22,4 +22,9 @@ steps:
   inputs:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    script: sh tools-zsh-install.sh'
+    script: |
+      sh tools-zsh-install.sh
+      zsh
+      y
+      return
+    displayName: 'Executando script mutiplo'
