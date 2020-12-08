@@ -58,4 +58,4 @@ sudo echo "zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions" >> ~/.zshrc
 
-exit 1
+return

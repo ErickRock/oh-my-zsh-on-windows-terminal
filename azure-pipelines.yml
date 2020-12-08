@@ -12,7 +12,6 @@ pool:
 steps:
 - script: sh zsh-install.sh
   displayName: 'zsh-install.sh'
-- script: exec zsh -2 || exit
 
 - task: Bash@3
   inputs:
