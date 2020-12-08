@@ -18,6 +18,8 @@ steps:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
+      y
+      enter
       sh tools-zsh-install.sh
       exec zsh -y
     displayName: 'tools-zsh-install.sh'
