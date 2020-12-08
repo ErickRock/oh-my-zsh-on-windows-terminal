@@ -1,6 +1,0 @@
-- name: Azure Pipelines Action
-- task: Bash@3
-  inputs:
-    filePath: 'sh zsh-install.sh'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
-    noRc: false
