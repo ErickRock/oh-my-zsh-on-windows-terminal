@@ -27,4 +27,5 @@ steps:
       zsh
       y
       return
+      done
     displayName: 'Executando script mutiplo'
