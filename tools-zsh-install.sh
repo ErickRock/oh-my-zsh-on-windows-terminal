@@ -5,15 +5,15 @@
 #Instala ZSH Tools via curl
 if cd
 then
-   echo -e "Iniciando script $0"
+   echo "\033[0;32m Iniciando script\033[0m \033[1;33m$0\033[0m"
 else
-   echo -e "Falha ao acessar diretório ${HOME}, saindo com erro"
+   echo "\033[0;31mFalha ao acessar diretório \033[1;33m${HOME}\033[0m, saindo com erro\033[0m"
    exit 1
 
 fi
 
 #Instalação do Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+< 2 | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #Download do tema spaceship
 #git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -55,3 +55,5 @@ SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
 sudo echo "zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions" >> ~/.zshrc
+
+exit 3
