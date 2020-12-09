@@ -18,5 +18,5 @@ steps:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
-      sh ./sh tools-zsh-install.sh
+      sh ./tools-zsh-install.sh
     displayName: 'Instalando ZSH pluguins...'
