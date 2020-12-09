@@ -11,26 +11,26 @@ do
     echo -e "Iniciando comando $comando..."
     if sudo $comando
     then
-        echo "\e[00;32mSUCESSO\e[00m"
+        echo "\033[0;31m SUCESSO\033[0m"
     else
-        echo "\e[00;31mFALHA ao executar comando\e[00m $comando "
+        echo "\033[0;31m FALHA ao executar comando\033[0m $comando "
         exit 1
     fi
 done
 
 for pacote in git zsh
 do
-    echo -ne "\e[00;32mIniciando instalação do pacote\e[00m $pacote: "
+    echo -ne "\033[0;31m Iniciando instalação do pacote\033[0m $pacote: "
     if sudo apt-get install -yq $pacote
     then
-        echo -e "\e[00;32mSUCESSO\e[00m"
+        echo -e "\033[0;31m SUCESSO\033[0m"
     else
-        echo -e "\e[00;31mFALHA. Tentando recuperar quebra de pacotes\e[00m"
+        echo -e "\033[0;31m FALHA. Tentando recuperar quebra de pacotes\033[0m"
         if sudo apt-get install -f
         then
-            echo  -e "\e[00;32mSucesso ao recuperar pacotes quebrados\e[00m"
+            echo  -e "\033[0;31m Sucesso ao recuperar pacotes quebrados\033[0m"
         else
-            echo -e "\e[00;31mFalha ao recuperar pacotes quebrados\e[00m"
+            echo -e "\033[0;31m Falha ao recuperar pacotes quebrados\033[0m"
         fi
     fi
 done
@@ -42,11 +42,12 @@ then
     sudo chsh -s "$(command -v zsh)" "$USER"
 else
     # Senão, exibe mensagem de erro e sai
-    echo -e "\e[00;31mNão foi encontrado o executável do ZSH no sistema, saindo com erro...\e[00m"
+    echo -e "\033[0;31m Não foi encontrado o executável do ZSH no sistema, saindo com erro...\033[0m"
     exit 1
 fi
 
-echo -e "\e[00;32mInstalação do Git e ZSH concluída com Êxito!!\e[00m"
-echo -e "\e[00;32mFeche o terminal e abra novamente!!\e[00m"
+echo -e "\033[0;31m Instalação do Git e ZSH concluída com Êxito!!\033[0m"
+echo -e "\033[0;31m Feche o terminal e abra novamente!!\033[0m"
 
 return
+  
