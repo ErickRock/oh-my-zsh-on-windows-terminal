@@ -2,7 +2,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
+pr:
+- master
+- releases/*
 
 pool:
   vmImage: 'ubuntu-latest'
