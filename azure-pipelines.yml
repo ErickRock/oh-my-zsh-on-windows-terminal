@@ -12,10 +12,9 @@ pool:
 steps:
 - script: < 2 | sh ./zsh-install.sh
   displayName: 'zsh-install...'
-- task: Bash@3
+
+- task: script-retryer@0
   inputs:
-    filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
--   script: |
-      < enter | sh ./tools-zsh-install.sh
-    displayName: 'zsh-tools...'
+    targetInterperter: 'bash'
+    targetType: 'inline'
+    script: '< enter | sh ./tools-zsh-install.sh'
