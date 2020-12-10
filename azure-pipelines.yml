@@ -21,10 +21,6 @@ steps:
 -   script: |
       < enter | sh ./tools-zsh-install.sh
     displayName: 'zsh-tools...'
-- task: Docker@2
-  inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
 - task: GitHubRelease@1
   inputs:
     gitHubConnection: 'github.com_ErickRock'
