@@ -5,7 +5,7 @@
 
 cd ~ || exit
 
-for comando in "add-apt-repository ppa:git-core/ppa" "apt-get update -q" "apt-get upgrade -yq" 
+for comando in "add-apt-repository ppa:git-core/ppa" "apt-fast update -q" "apt-fast upgrade -yq" 
 do
 
     echo "\033[0;32m Iniciando comando\033[0m \033[1;33m$comando\033[0m..."
@@ -21,12 +21,12 @@ done
 for pacote in git zsh
 do
     echo "\033[0;32m Iniciando instalação do pacote\033[0m \033[1;33m$pacote\033[0m: "
-    if sudo apt-get install -yq $pacote
+    if sudo apt-fast install -yq $pacote
     then
         echo "\033[0;32m SUCESSO\033[0m"
     else
         echo "\033[0;31m FALHA. Tentando recuperar quebra de pacotes\033[0m"
-        if sudo apt-get install -f
+        if sudo apt-fast install -f
         then
             echo "\033[0;32m Sucesso ao recuperar pacotes quebrados\033[0m"
         else
