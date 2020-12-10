@@ -12,7 +12,6 @@ pool:
 steps:
 - script: < 2 | sh ./zsh-install.sh
   displayName: 'zsh-install...'
-
 - task: Bash@3
   inputs:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
@@ -20,13 +19,3 @@ steps:
 -   script: |
       < enter | sh ./tools-zsh-install.sh
     displayName: 'zsh-tools...'
-- task: GitHubRelease@1
-  inputs:
-    gitHubConnection: 'github.com_ErickRock'
-    repositoryName: 'ErickRock/oh-my-zsh-on-windows-terminal'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    tagPattern: 'release-v1.'
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
