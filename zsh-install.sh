@@ -49,4 +49,4 @@ fi
 echo "\033[0;32m Instalação do Git e ZSH concluída com Êxito!!\033[0m"
 echo "\033[0;32m Feche o terminal e abra novamente!!\033[0m"
 
-exit 3
+return
