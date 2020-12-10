@@ -5,12 +5,13 @@ trigger:
 - master
 pr:
 - master
-- releases/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: sudo apt-get update || sudo apt-get upgrade
+  displayName: 'apt Update e Upgrade'
 - script: < 2 | sh ./zsh-install.sh
   displayName: 'zsh-install...'
     
