@@ -13,7 +13,7 @@ else
 fi
 
 #Instalação do Oh-my-zsh
-< 2 | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #Download do tema spaceship
 #git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -55,5 +55,3 @@ SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
 sudo echo "zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions" >> ~/.zshrc
-
-exit 3

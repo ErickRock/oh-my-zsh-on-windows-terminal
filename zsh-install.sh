@@ -5,7 +5,7 @@
 
 cd ~ || exit
 
-for comando in "add-apt-repository ppa:git-core/ppa" "apt-get update -q" "apt-get upgrade -yq" "apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0" "apt-add-repository https://cli.github.com/packages"
+for comando in "add-apt-repository ppa:git-core/ppa" "apt-get update -q" "apt-get upgrade -yq" 
 do
 
     echo "\033[0;32m Iniciando comando\033[0m \033[1;33m$comando\033[0m..."
@@ -18,7 +18,7 @@ do
     fi
 done
 
-for pacote in git zsh gh
+for pacote in git zsh
 do
     echo "\033[0;32m Iniciando instalação do pacote\033[0m \033[1;33m$pacote\033[0m: "
     if sudo apt-get install -yq $pacote

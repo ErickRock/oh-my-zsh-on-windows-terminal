@@ -12,7 +12,7 @@ pool:
 
 steps:
 - script: sh ./zsh-install.sh
-  displayName: 'zsh-install.sh...'
+  displayName: 'zsh-install...'
 
 - task: Bash@3
   inputs:
@@ -20,4 +20,4 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
       sh ./tools-zsh-install.sh
-    displayName: 'tools-zsh-install.sh...'
+    displayName: 'zsh-tools...'
