@@ -23,9 +23,10 @@ steps:
 - task: GitHubRelease@1
   inputs:
     gitHubConnection: 'github.com_ErickRock'
-    repositoryName: '$(Build.Repository.Name)'
+    repositoryName: 'ErickRock/oh-my-zsh-on-windows-terminal'
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'gitTag'
+    tagPattern: 'release-v1.'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
