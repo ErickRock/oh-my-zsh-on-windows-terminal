@@ -1,7 +1,11 @@
 ![](/.github/fundo.gif)
 
+# Status e testes
+[![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=master)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=master)
+
 **Índice**
 
+- [Status e testes](#status-e-testes)
 - [Requisitos mínimos](#requisitos-mínimos)
   - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl)
   - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf)
