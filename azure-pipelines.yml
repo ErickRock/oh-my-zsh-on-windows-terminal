@@ -5,21 +5,14 @@ trigger:
 - master
 pr:
 - master
+- releases/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: /bin/bash -c "$(curl -sL https://git.io/vokNn)"
-  displayName: 'install apt-fast...'
-
-- task: Bash@3
-  inputs:
-    filePath: '$(Build.SourcesDirectory)/zsh-install.sh'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
--   script: |
-      < 2 | sh ./zsh-install.sh
-    displayName: 'zsh-install...'
+- script: < 2 | sh ./zsh-install.sh
+  displayName: 'zsh-install...'
     
 - task: Bash@3
   inputs:
