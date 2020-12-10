@@ -11,13 +11,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: sh ./zsh-install.sh
-  displayName: 'Instalando Shell ZSH...'
+- script: < 2 | sh ./zsh-install.sh
+  displayName: 'zsh-install.sh...'
 
 - task: Bash@3
   inputs:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
-      sh ./tools-zsh-install.sh
-    displayName: 'Instalando ZSH pluguins...'
+      < enter | sh ./tools-zsh-install.sh
+    displayName: 'tools-zsh-install.sh...'
