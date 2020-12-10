@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: < enter | /bin/bash -c "$(curl -sL https://git.io/vokNn)"
+- script: /bin/bash -c "$(curl -sL https://git.io/vokNn)"
   displayName: 'install apt-fast...'
 
 - task: Bash@3
@@ -20,6 +20,7 @@ steps:
 -   script: |
       < 2 | sh ./zsh-install.sh
     displayName: 'zsh-install...'
+    
 - task: Bash@3
   inputs:
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
