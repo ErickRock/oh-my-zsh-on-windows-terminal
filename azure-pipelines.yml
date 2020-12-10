@@ -5,17 +5,19 @@ trigger:
 - master
 pr:
 - master
-- releases/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: sh ./zsh-install.sh
+- script: < zsh | sh ./zsh-install.sh
   displayName: 'zsh-install.sh...'
 
 - task: Bash@3
   inputs:
+    arguments: 'y'
+    noProfile: false
+    noRc: false
     filePath: '$(Build.SourcesDirectory)/tools-zsh-install.sh'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 -   script: |
