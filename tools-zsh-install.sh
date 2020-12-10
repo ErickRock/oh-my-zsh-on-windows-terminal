@@ -51,6 +51,7 @@ SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
 #Instalação do Zinit com plubuins e confirmação do fim do script
  < y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
+
 #Adição dos pluguins 
 sudo echo "zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions

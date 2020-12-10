@@ -196,7 +196,9 @@ Esses são os plugins inclusos e abaixo explico como funciona cada um deles:
 
 Você pode acessar toda a estrutura de arquivos da Distro instalada no caminho `\\wsl$` da mesma forma que acessa um servidor, pasta e etc. É possível deixar um mapeamento de rede deste caminho caso preferir.
 
+
 Créditos e links de referência: 
+
 
 - [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
 - [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
