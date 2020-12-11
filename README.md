@@ -1,7 +1,11 @@
 ![](/.github/fundo.gif)
 
 # Status e testes
+
 [![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=master)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=master)
+[![GitHub forks](https://img.shields.io/github/forks/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/network)
+[![GitHub stars](https://img.shields.io/github/stars/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/issues)
 
 **Índice**
 
@@ -77,7 +81,7 @@ Com o update instalado, execute o Powershell como Admin e digite `wsl -l -v`, es
 
 ![](/.github/wsl1.png)
 
-Agora digite `wsl --set-version <distro name> 2` substitua distro name pelo nome da sua distro, sem os sinais <> ,a migração para WSL 2 iniciará, e ao fim disso poderá usar o Linux no Windows 10x mais rápido do que a versão WSL 1 que estava instalada antes.
+Agora digite `wsl --set-version <distro name> 2` substitua distro name pelo nome da sua distro, sem os sinais `<>` ,a migração para WSL 2 iniciará, e ao fim disso poderá usar o Linux no Windows 10x mais rápido do que a versão WSL 1 que estava instalada antes.
 
 ![](/.github/wsl2.png)
 
@@ -95,7 +99,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-win
 
 Ao fim do comando, feche o terminal e abra novamente.
 
-Entre com a opção 2 e tecle enter. Feche o no fim do processo. Abra ele novamente para continuar os comandos seguintes.
+Entre com a opção 2 e tecle enter. Feche o terminal no fim do processo e abra ele novamente para continuar os comandos seguintes.
 
 ![](/.github/default.png)
 
@@ -107,7 +111,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-win
 
 ![](/.github/zshtools.png)
 
-Nessa seguinte tela entre com `exit` e tecle enter para o sript continuar.
+Na tela seguinte entre com `exit` e tecle enter para o sript continuar.
 
 ![](/.github/exit.png)
 
