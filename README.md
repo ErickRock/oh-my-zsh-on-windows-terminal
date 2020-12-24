@@ -6,6 +6,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/network)
 [![GitHub stars](https://img.shields.io/github/stars/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/issues)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/erickrock/oh-my-zsh-on-windows-terminal/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=ErickRock%2Foh-my-zsh-on-windows-terminal&benchmark=INFRASTRUCTURE+SECURITY)
 
 **Índice**
 
