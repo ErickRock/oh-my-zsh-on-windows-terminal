@@ -2,13 +2,13 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
 //DeafaultProfile você pode definir o Terminal padrão ao abrir o Windows Terminal
 //O Valor deve ser referencia ao atributo "name" ou "guid" do Profile List
-    "defaultProfile": "🌌 Powershell",
+    "defaultProfile": "🌌 Windows PowerShell",
     "requestedTheme" : "system",
     "showTabsInTitlebar" : true,
     "showTerminalTitleInTitlebar" : true,
     "wordDelimiters" : " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502",
     "snapToGridOnResize": true,
-    "initialCols": 100,
+    "initialCols": 110,
     "initialRows": 27,
     "copyOnSelect": false,
     "copyFormatting": false,
@@ -22,7 +22,7 @@
             "fontFace": "Fira Code",
             "fontSize": 10,
             // "startingDirectory" : "%USERPROFILE%",
-            "useAcrylic" : true,
+            "useAcrylic" : false,
             "cursorColor" : "#FFFFFF"
             
           
@@ -31,12 +31,15 @@
         [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "🌟 Windows PowerShell",
+                "name": "🌌 Windows PowerShell",
                 "commandline": "powershell.exe",
+                "colorScheme": "cyberpunk",
                 "hidden": false,
                 "useAcrylic": false,
                 "fontFace": "Cascadia Code PL",
-                "startingDirectory" : "%USERPROFILE%"
+                "suppressApplicationTitle": true,
+                "startingDirectory": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\Projetos"
+
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -44,11 +47,13 @@
                 "commandline": "cmd.exe",
                 "hidden": false,
                 "colorScheme": "Dracula CMD",
-                "useAcrylic": false,
-                "background": "#21222C"
+                "useAcrylic": true,
+                "background": "#21222C",
+                
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "colorScheme": "Ubuntu",
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
@@ -62,6 +67,7 @@
             },
             {
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "colorScheme": "Ubuntu",
                 "hidden": false,
                 "name": "Ubuntu 20.04",
                 "source": "Windows.Terminal.Wsl",
@@ -74,6 +80,7 @@
             },
             {
                 "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "colorScheme": "Ubuntu",
                 "hidden": false,
                 "name": "🪐Kali Linux",
                 "source": "Windows.Terminal.Wsl",
@@ -83,12 +90,15 @@
             },
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "colorScheme": "cyberpunk",
                 "hidden": false,
-                "name": "🌌 Powershell",
+                "name": "🌟 Powershell",
                 "fontFace": "Cascadia Code PL",
                 "source": "Windows.Terminal.PowershellCore",
-                "tabTitle": "🌌 Powershell",
-                "suppressApplicationTitle": true               
+                "tabTitle": "🌟 Powershell",
+                "suppressApplicationTitle": true,
+                "startingDirectory": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\Projetos"
+                
             }
         ]
     },
@@ -117,7 +127,48 @@
             "white" : "#F8F8F2",
             "yellow" : "#F1FA8C"
         },
-
+        {
+            "name": "cyberpunk",
+            "black": "#000000",
+            "red": "#ff7092",
+            "green": "#00fbac",
+            "yellow": "#fffa6a",
+            "blue": "#00bfff",
+            "purple": "#df95ff",
+            "cyan": "#86cbfe",
+            "white": "#ffffff",
+            "brightBlack": "#000000",
+            "brightRed": "#ff8aa4",
+            "brightGreen": "#21f6bc",
+            "brightYellow": "#fff787",
+            "brightBlue": "#1bccfd",
+            "brightPurple": "#e6aefe",
+            "brightCyan": "#99d6fc",
+            "brightWhite": "#ffffff",
+            "background": "#332a57",
+            "foreground": "#e5e5e5"
+          },
+        {
+            "name": "Blue Matrix",
+            "black": "#101116",
+            "red": "#ff5680",
+            "green": "#00ff9c",
+            "yellow": "#fffc58",
+            "blue": "#00b0ff",
+            "purple": "#d57bff",
+            "cyan": "#76c1ff",
+            "white": "#c7c7c7",
+            "brightBlack": "#686868",
+            "brightRed": "#ff6e67",
+            "brightGreen": "#5ffa68",
+            "brightYellow": "#fffc67",
+            "brightBlue": "#6871ff",
+            "brightPurple": "#d682ec",
+            "brightCyan": "#60fdff",
+            "brightWhite": "#ffffff",
+            "background": "#1d2342",
+            "foreground": "#b8ffe1"
+        },
         {
             "name" : "Dracula CMD",
                 "background" : "#282A36",
@@ -138,9 +189,32 @@
                 "red" : "#FF5555",
                 "white" : "#F8F8F2",
                 "yellow" : "#F1FA8C"
-        }
+        },
+        {
+            "name": "Ubuntu",
+            "black": "#2e3436",
+            "red": "#cc0000",
+            "green": "#4e9a06",
+            "yellow": "#c4a000",
+            "blue": "#3465a4",
+            "purple": "#75507b",
+            "cyan": "#06989a",
+            "white": "#d3d7cf",
+            "brightBlack": "#555753",
+            "brightRed": "#ef2929",
+            "brightGreen": "#8ae234",
+            "brightYellow": "#fce94f",
+            "brightBlue": "#729fcf",
+            "brightPurple": "#ad7fa8",
+            "brightCyan": "#34e2e2",
+            "brightWhite": "#eeeeec",
+            "background": "#300a24",
+            "foreground": "#eeeeec"
+          }
     ],
 
+    // Add custom keybindings to this array.
+    // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
     "keybindings":
     [
