@@ -13,23 +13,23 @@ else
 fi
 
 #Instalação do Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #Download do tema spaceship
-#git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
 ####------erro abaixo-------#
 ##Print do erro durante a instalação: https://i.imgur.com/go3xX2j.png
 ##Aprentemente da problema ao tentar criar o seguinte link simbólico
 #Gerando link simbólico
-#ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 #Setando o tema para spaceship e iniciando o zsh
 #Alterado para o fino pois o Spaceship está com o erro nos comentários acima
-sed -i 's/robbyrussell/fino/' ~/.zshrc
+#,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,sed -i 's/robbyrussell/fino/' ~/.zshrc
 
 #Adição de configuração do spaceship no arquivo ~/.zshrc
-echo '#Configuração da interface do terminal
+echo '# Configuração da interface do terminal com spaceship-prompt
 SPACESHIP_PROMPT_ORDER=(
    user          # Use,rname section
    dir           # Current directory section
@@ -46,15 +46,26 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="->"
-SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
+SPACESHIP_CHAR_SUFFIX=" "
+# Fim da configuração do spaceship-prompt' >> ~/.zshrc
 
-#Instalação do Zinit com plubuins e confirmação do fim do script
- < y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+#Instalação do Zinit com plugins e confirmação do fim do script
+ < y | sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
 
 #Adição dos pluguins 
-sudo echo "zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions" >> ~/.zshrc
+echo "### Plugins for zdharma-continuum zinit
+zinit for \
+   light-mode zdharma-continuum/fast-syntax-highlighting \
+   light-mode zdharma-continuum/history-search-multi-word \
+   light-mode zsh-users/zsh-autosuggestions \
+   light-mode zsh-users/zsh-completions \
+   light-mode spaceship-prompt/spaceship-prompt
+### End of Zinit's plugins" >> ~/.zshrc
+
+echo "# Launch Zsh
+if [ -t 1 ]; then
+exec zsh
+fi" >> ~/.bashrc
 
 exec zsh
