@@ -5,29 +5,17 @@
 
 cd ~ || exit
 
-# Instalação do Git
-echo "Iniciando instalação do Git..."
-sudo apt-get install -y git
+for comando in "apt-get update -q" "apt-get upgrade -yq"
+do
+    echo "Executando comando: $comando..."
+...(17 lines omitted)...
+        if sudo apt-get install -f
+        then
+            echo "Pacotes quebrados recuperados com sucesso."
+        else
+            echo "Falha ao recuperar pacotes quebrados."
+        fi
+    fi
+done
 
-# Verifica se o Git já está instalado
-if command -v git >/dev/null 2>&1
-then
-    echo "Git já está instalado"
-else
-    echo "Falha ao instalar o Git"
-    exit 1
-fi
-
-# Verifica se o ZSH já está instalado
-if command -v zsh >/dev/null 2>&1
-then
-    echo "ZSH já está instalado"
-else
-    # Instalação do ZSH
-    echo "Iniciando instalação do ZSH..."
-    sudo apt-get install -y zsh
-fi
-
-echo "Instalação do Git e ZSH concluída com sucesso!"
-
-return
+echo "Instalação do Git e ZSH concluída com êxito!"
