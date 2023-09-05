@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Conceder permissão de execução ao zsh-install.sh
-        run: chmod +x zsh-install.sh
-
+      - name: Conceder permissão de execução aos scripts
+        run: chmod +x zsh-install.sh || chmod +x tools-zsh-install.sh
+        
       - name: Testar instalação do zsh-install.sh
         run: ./zsh-install.sh
 
