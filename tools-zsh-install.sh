@@ -2,36 +2,32 @@
 # Script de instalação - ZSH Tools + Autocomplete 
 # Autor: @rickkgarciia e @ed_lsba - Twitter
 # Descrição: Instalação do tema Spaceship padrão - em construção
-#Instala ZSH Tools via curl
-if cd
-then
+
+# Verificação do diretório inicial
+if cd; then
    echo "\033[0;32m Iniciando script\033[0m \033[1;33m$0\033[0m"
 else
    echo "\033[0;31mFalha ao acessar diretório \033[1;33m${HOME}\033[0m, saindo com erro\033[0m"
    exit 1
-
 fi
 
-#Instalação do Oh-my-zsh
+# Instalação do Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#Download do tema spaceship
+# Download do tema spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
-####------erro abaixo-------#
-##Print do erro durante a instalação: https://i.imgur.com/go3xX2j.png
-##Aprentemente da problema ao tentar criar o seguinte link simbólico
-#Gerando link simbólico
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# Criação do link simbólico
+if ln -s "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"; then
+   echo "Link simbólico criado com sucesso"
+else
+   echo "Falha ao criar link simbólico"
+fi
 
-#Setando o tema para spaceship e iniciando o zsh
-#Alterado para o fino pois o Spaceship está com o erro nos comentários acima
-#,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,sed -i 's/robbyrussell/fino/' ~/.zshrc
-
-#Adição de configuração do spaceship no arquivo ~/.zshrc
+# Configuração do tema Spaceship no arquivo ~/.zshrc
 echo '# Configuração da interface do terminal com spaceship-prompt
 SPACESHIP_PROMPT_ORDER=(
-   user          # Use,rname section
+   user          # Username section
    dir           # Current directory section
    host          # Hostname section
    git           # Git section (git_branch + git_status)
@@ -49,11 +45,10 @@ SPACESHIP_CHAR_SYMBOL="->"
 SPACESHIP_CHAR_SUFFIX=" "
 # Fim da configuração do spaceship-prompt' >> ~/.zshrc
 
-#Instalação do Zinit com plugins e confirmação do fim do script
- < y | sh -c "$(curl -fsSL https://git.io/zinit-install)"
+# Instalação do Zinit com plugins
+sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
-
-#Adição dos pluguins 
+# Adição dos plugins 
 echo "### Plugins for zdharma-continuum zinit
 zinit for \
    light-mode zdharma-continuum/fast-syntax-highlighting \
@@ -63,6 +58,7 @@ zinit for \
    light-mode spaceship-prompt/spaceship-prompt
 ### End of Zinit's plugins" >> ~/.zshrc
 
+# Configuração do lançamento do Zsh no arquivo ~/.bashrc
 echo "# Launch Zsh
 if [ -t 1 ]; then
 exec zsh
