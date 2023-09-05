@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-# Script de instalação - ZSH Tools + Autocomplete 
+# Script de instalação - ZSH Tools + Autocomplete
 # Autor: @rickkgarciia e @ed_lsba - Twitter
 # Descrição: Instalação do tema Spaceship padrão - em construção
 
@@ -43,12 +43,12 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="->"
 SPACESHIP_CHAR_SUFFIX=" "
-# Fim da configuração do spaceship-prompt' >> ~/.zshrc
+# Fim da configuração do spaceship-prompt' >>~/.zshrc
 
 # Instalação do Zinit com plugins
 sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
-# Adição dos plugins 
+# Adição dos plugins
 echo "### Plugins for zdharma-continuum zinit
 zinit for \
    light-mode zdharma-continuum/fast-syntax-highlighting \
@@ -56,12 +56,12 @@ zinit for \
    light-mode zsh-users/zsh-autosuggestions \
    light-mode zsh-users/zsh-completions \
    light-mode spaceship-prompt/spaceship-prompt
-### End of Zinit's plugins" >> ~/.zshrc
+### End of Zinit's plugins" >>~/.zshrc
 
 # Configuração do lançamento do Zsh no arquivo ~/.bashrc
 echo "# Launch Zsh
 if [ -t 1 ]; then
 exec zsh
-fi" >> ~/.bashrc
+fi" >>~/.bashrc
 
 exec zsh
