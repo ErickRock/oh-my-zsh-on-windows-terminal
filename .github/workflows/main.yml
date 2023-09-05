@@ -1,4 +1,4 @@
-name: CI
+name: Teste de execução dos Scripts
 
 on:
   push:

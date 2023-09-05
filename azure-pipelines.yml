@@ -2,16 +2,30 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+      - main
 pr:
-- master
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: < 2 | sh ./zsh-install.sh
-  displayName: 'zsh-install...'
-- script: < enter | sh ./tools-zsh-install.sh  
-  displayName: 'zsh-tools...'   
+- checkout: self
+
+- script: |
+    chmod +x zsh-install.sh && chmod +x tools-zsh-install.sh
+  displayName: 'Conceder permissão de execução aos scripts'
+
+- script: |
+    ./zsh-install.sh
+  displayName: 'Testar instalação do zsh-install.sh'
+
+- script: |
+    ./tools-zsh-install.sh
+  displayName: 'Testar instalação do tools-zsh-install.sh'
+
 

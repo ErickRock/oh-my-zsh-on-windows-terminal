@@ -1,7 +1,8 @@
-![](/.github/fundo.gif)
+<img src="/.github/fundo.gif" alt="fundo" />
 
 # Status e testes
 
+[![CI](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml/badge.svg)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml)
 [![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=master)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=master)
 [![GitHub forks](https://img.shields.io/github/forks/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/network)
 [![GitHub stars](https://img.shields.io/github/stars/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/stargazers)
@@ -93,7 +94,7 @@ Com todo ambiente instalado e configurado, você já pode abrir o Windows Termin
 ## Execute o script de instalação do ZSH
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/zsh-install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/zsh-install.sh)"
 ```
 
 ![](/.github/zshinstall.png)
@@ -107,7 +108,7 @@ Entre com a opção 2 e tecle enter. Feche o terminal no fim do processo e abra 
 ### Execute o script de instalação do ZSH Tools + Pluguins
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/master/tools-zsh-install.sh)" -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/tools-zsh-install.sh)" -y
 ```
 
 ![](/.github/zshtools.png)
@@ -211,3 +212,6 @@ Créditos e links de referência:
 
 - [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
 - [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
+
+
+
