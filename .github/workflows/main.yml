@@ -14,9 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Conceder permissão de execução ao zsh-install.sh
+        run: chmod +x zsh-install.sh
+
       - name: Testar instalação do zsh-install.sh
         run: ./zsh-install.sh
 
       - name: Testar instalação do tools-zsh-install.sh
         run: ./tools-zsh-install.sh
-
