@@ -1,5 +1,8 @@
 ![fundo](.github/fundo.gif)
-# Status e testes
+## Como usar o ZSH no Windows Terminal
+### Novidades da versão 2.0.23
+
+O ZSH é um shell interativo que oferece muitas vantagens e funcionalidades para quem trabalha com Linux no Windows. Neste artigo, vamos mostrar como instalar e configurar o ZSH no Windows Terminal, um aplicativo que permite usar vários shells em uma única janela. Além disso, vamos apresentar as novidades da versão 2.0.23 do nosso projeto, que inclui correções de bugs, melhorias de performance e novos recursos.
 
 [![CI](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml/badge.svg)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml)
 [![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=main)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=main)
@@ -10,7 +13,7 @@
 
 **Índice**
 
-- [Status e testes](#status-e-testes) 📊
+- [Novidades da versão 2.0.23](#novidades-da-versão-2023) 🆕
 - [Requisitos mínimos](#requisitos-mínimos) 🛠️
   - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl) 💻
   - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf) 🌟
@@ -27,6 +30,7 @@
     - [Crie o link simbólico](#crie-o-link-simbólico) 🪝
     - [Ativando o tema](#ativando-o-tema) 🌈
     - [Pluguins inclusos](#pluguins-inclusos) 🧩
+    - [Changelog](#changelog) 📝
 - [Dicas](#dicas) 💡
 
 # Requisitos mínimos 🛠️
@@ -205,6 +209,29 @@ Esses são os plugins inclusos, e abaixo explico como cada um deles funciona:
 # Dicas 💡
 
 Você pode acessar toda a estrutura de arquivos da distribuição Linux instalada no caminho `\\wsl$`, da mesma forma que acessa um servidor, pasta, etc. É possível deixar um mapeamento de rede deste caminho, caso prefira.
+
+# Changelog 
+
+## [2.0.23] - 2023-09-06
+
+### Corrigido 🐛
+- Erro de ortografia na palavra "Pluguins", que agora está escrita corretamente como "Plugins" .
+- Erro de sintaxe no script de instalação do ZSH Tools + Plugins, que agora usa o operador `&&` em vez de `||` para garantir a execução sequencial dos comandos .
+- Bug que impedia o início do ZSH ao fim do script de instalação, que agora usa o comando `exec zsh` para substituir o shell atual pelo ZSH .
+
+### Melhorado 🚀
+- Processo de integração contínua (CI) no GitHub e no Azure, que agora usa o apt-fast para acelerar a instalação de pacotes no Linux .
+- Tema Spaceship para usar o novo projeto zdharma-continuum zinit, que é um fork do antigo projeto zdharma zinit que foi descontinuado .
+
+### Adicionado ➕
+- Temas padrões do Oh My Zsh, que são temas simples e elegantes para o ZSH. Você pode escolher entre os temas robbyrussell, agnoster, bira, candy, etc. .
+
+¹: [v.2.0.23 Fixed #8, #9](^1^)
+²: [Sintaxe || corrigida para &&](^2^)
+³: [Inicia o zsh ao fim do script](^3^)
+⁴: [implementado apt-fast](^4^)
+⁵: [Update to use new zdharma-continuum zinit project](^5^)
+⁶: [🎨 Adicionado Temas Padrões](^6^)
 
 Créditos e links de referência:
 
