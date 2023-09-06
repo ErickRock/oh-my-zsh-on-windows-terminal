@@ -1,9 +1,8 @@
-<img src="/.github/fundo.gif" alt="fundo" />
-
+![fundo](.github/fundo.gif)
 # Status e testes
 
 [![CI](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml/badge.svg)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml)
-[![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=master)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=master)
+[![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=main)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=main)
 [![GitHub forks](https://img.shields.io/github/forks/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/network)
 [![GitHub stars](https://img.shields.io/github/stars/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/issues)
@@ -11,113 +10,110 @@
 
 **Índice**
 
-- [Status e testes](#status-e-testes)
-- [Requisitos mínimos](#requisitos-mínimos)
-  - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl)
-  - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf)
-  - [Habilite o Hyper-V e o WSL via Powershell Admin](#habilite-o-hyper-v-e-o-wsl-via-powershell-admin)
-  - [Instale uma Distro linux](#instale-uma-distro-linux)
-  - [Instale o Windows Terminal](#instale-o-windows-terminal)
-  - [Atualizando o Kernel Linux no Windows](#atualizando-o-kernel-linux-no-windows)
-    - [Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)](#migrar-a-distro-existente-para-wsl-2-utilizará-o-kernel-nativo-do-linux-no-windows)
-- [Utilizando o Linux](#utilizando-o-linux)
-  - [Execute o script de instalação do ZSH](#execute-o-script-de-instalação-do-zsh)
-    - [Execute o script de instalação do ZSH Tools + Pluguins](#execute-o-script-de-instalação-do-zsh-tools--pluguins)
-    - [Tema Spaceship](#tema-spaceship)
-    - [Instalando](#instalando)
-    - [Crie o link simbólico](#crie-o-link-simbólico)
-    - [Ativando o tema](#ativando-o-tema)
-    - [Pluguins inclusos](#pluguins-inclusos)
-- [Dicas](#dicas)
+- [Status e testes](#status-e-testes) 📊
+- [Requisitos mínimos](#requisitos-mínimos) 🛠️
+  - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl) 💻
+  - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf) 🌟
+  - [Habilite o Hyper-V e o WSL via Powershell Admin](#habilite-o-hyper-v-e-o-wsl-via-powershell-admin) ⚙️
+  - [Instale uma Distro linux](#instale-uma-distro-linux) 🐧
+  - [Instale o Windows Terminal](#instale-o-windows-terminal) 🪟
+  - [Atualizando o Kernel Linux no Windows](#atualizando-o-kernel-linux-no-windows) 🔄
+    - [Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)](#migrar-a-distro-existente-para-wsl-2-utilizará-o-kernel-nativo-do-linux-no-windows) 🚀
+- [Utilizando o Linux](#utilizando-o-linux) 💡
+  - [Execute o script de instalação do ZSH](#execute-o-script-de-instalação-do-zsh) 🖥️
+    - [Execute o script de instalação do ZSH Tools + Pluguins](#execute-o-script-de-instalação-do-zsh-tools--pluguins) 🛠️
+    - [Tema Spaceship](#tema-spaceship) 🌌
+    - [Instalando](#instalando) 🚀
+    - [Crie o link simbólico](#crie-o-link-simbólico) 🪝
+    - [Ativando o tema](#ativando-o-tema) 🌈
+    - [Pluguins inclusos](#pluguins-inclusos) 🧩
+- [Dicas](#dicas) 💡
 
-# Requisitos mínimos
-- Windows 10 Versão 2004
-- - Hyper-V ativado
-- - Subsistema do Windows para Linux ativado
-- - Uma distribuição Linux instalada
-- - Fonte Firacode instalado
-- - Visual Studio Code
-- Uma distribuição linux instalada
+# Requisitos mínimos 🛠️
 
-## Visual Studio Code + Remote WSL
+Para começar, você precisará baixar e instalar o [Visual Studio Code](https://code.visualstudio.com/Download), um editor de código-fonte popular e gratuito. Você pode fazer isso acessando o site oficial do VS Code e seguindo as instruções de instalação para o seu sistema operacional.
 
-Baixe e instale o <a href="https://code.visualstudio.com/Download">Visual Studio Code</a>. 
-Após instalar o VS Code, instale também um pluguin chamado <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL </a>. Ele servirá para abrir e editar arquivos do Linux de forma visual, sem precisar utilizar nano, vim e afins. O atalho para salvar arquivos que fora editados é `Ctrl + S`
+# Visual Studio Code + Remote WSL 💻
 
-## Baixe e instale a fonte FiraCode Light TTF
+Após instalar o VS Code, instale também um pluguin chamado [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Ele servirá para abrir e editar arquivos do Linux de forma visual, sem precisar utilizar nano, vim e afins. O atalho para salvar arquivos que fora editados é `Ctrl + S` ✨
 
-Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip), ela trará alguns efeitos bem legais ao utilizar símbolos no código ou no terminal. Você pode ver mais detalhes do projeto no perfil deles no [GitHub - Fira Code](https://github.com/tonsky/FiraCode)
+# Baixe e instale a fonte FiraCode Light TTF 🌟
 
-<a href="https://github.com/tonsky/FiraCode/releases/download/4/Fira_Code_v4.zip"><img src="https://raw.githubusercontent.com/tonsky/FiraCode/master/extras/download.png" width="520" height="130"></a>
+Antes de tudo, [instale o pacote de fontes Fira Code](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip). Ela trará alguns efeitos bem legais ao utilizar símbolos no código ou no terminal. Você pode ver mais detalhes do projeto no perfil deles no [GitHub - Fira Code](https://github.com/tonsky/FiraCode).
 
-## Habilite o Hyper-V e o WSL via Powershell Admin
+# Habilite o Hyper-V e o WSL via Powershell Admin ⚙️
 
 ```powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-![](/.github/pws1.png)
+![Habilitando Hyper-V](/.github/pws1.png)
 
 ```powershell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-![](/.github/pws2.png)
+![Habilitando WSL](/.github/pws2.png)
 
-**OBS: Algumas máquinas é necessário habilitar a virtualização na bios também**
+**Observação:** Em algumas máquinas, pode ser necessário habilitar a virtualização na BIOS também.
 
-## Instale uma Distro linux
-<a href="https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?SilentAuth=1&wa=wsignin1.0&activetab=pivot:overviewtab"><img src="https://store-images.s-microsoft.com/image/apps.63954.13510798887446365.018f40a9-2b3c-4ff8-bb22-6247f3e8bb82.2b3e22de-e0e8-4c6d-bac4-cf78a8b03158?mode=scale&q=90&h=270&w=270&background=%23E95420" width="200" height="200"></a>
+# Instale uma Distro Linux 🐧
 
-## Instale o Windows Terminal
+Você pode escolher e instalar uma distribuição Linux de sua preferência. [Clique aqui para baixar o Ubuntu](https://www.microsoft.com/pt-br/p/ubuntu/9nblggh4msv6?SilentAuth=1&wa=wsignin1.0&activetab=pivot:overviewtab).
 
-<a href="https://www.microsoft.com/pt-br/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab"><img src="https://store-images.s-microsoft.com/image/apps.22832.13926773940052066.96ea379b-9e7a-49f1-8cee-25ed75770e30.dcdc888f-85a5-4182-8126-245f0757ef3a?mode=scale&q=90&h=300&w=200" width="200" height="300"></a>
+# Instale o Windows Terminal 🪟
 
-## Atualizando o Kernel Linux no Windows
+O [Windows Terminal](https://www.microsoft.com/pt-br/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) é uma ferramenta poderosa para gerenciar terminais no Windows.
 
-Atualize o Kernel do Linux no Windows, <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Baixe o pacote de atualização do kernel do Linux para o WSL 2 para computadores x64</a>.
+# Atualizando o Kernel Linux no Windows 🔄
 
-### Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)
+Atualize o Kernel do Linux no Windows, [baixe o pacote de atualização do kernel do Linux para o WSL 2 para computadores x64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi).
 
-Com o update instalado, execute o Powershell como Admin e digite `wsl -l -v`, este comando listará suas distros Linux instaladas, e qual WSL está usando. 
+## Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows) 🚀
 
-![](/.github/wsl1.png)
+Após instalar a atualização, execute o PowerShell como Administrador e digite o seguinte comando para listar suas distribuições Linux instaladas e verificar qual versão do WSL estão usando:
 
-Agora digite `wsl --set-version <distro name> 2` substitua distro name pelo nome da sua distro, sem os sinais `<>` ,a migração para WSL 2 iniciará, e ao fim disso poderá usar o Linux no Windows 10x mais rápido do que a versão WSL 1 que estava instalada antes.
+```powershell
+wsl -l -v
+```
 
-![](/.github/wsl2.png)
+![Listando Distribuições Linux](/.github/wsl1.png)
 
-# Utilizando o Linux
+Agora, migre sua distribuição Linux existente para o WSL 2 executando o comando:
 
-Com todo ambiente instalado e configurado, você já pode abrir o Windows Terminal, e iniciar a distro que instalou normalmente em novas abas.
+```powershell
+wsl --set-version <distro name> 2
+```
 
-## Execute o script de instalação do ZSH
+Substitua `<distro name>` pelo nome da sua distribuição, sem os sinais `<>`. A migração para o WSL 2 começará e, ao terminar, você poderá usar o Linux no Windows 10 vezes mais rápido do que com a versão WSL 1 anterior. 🚀
+
+# Utilizando o Linux 🐧 
+
+Com todo o ambiente instalado e configurado, você já pode abrir o Windows Terminal e iniciar sua distribuição Linux preferida em novas abas.
+
+## Execute o script de instalação do ZSH 🖥️
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/zsh-install.sh)"
 ```
 
-![](/.github/zshinstall.png)
+![Executando o Script ZSH Install](/.github/zshinstall.png)
 
-Ao fim do comando, feche o terminal e abra novamente.
+Após a execução do comando, feche o terminal e abra-o novamente.
 
-Entre com a opção 2 e tecle enter. Feche o terminal no fim do processo e abra ele novamente para continuar os comandos seguintes.
+Ao reiniciar, escolha a opção 2 e pressione Enter. Feche o terminal novamente e abra-o para continuar com os comandos a seguir. 
 
-![](/.github/default.png)
-
-### Execute o script de instalação do ZSH Tools + Pluguins
+## Execute o script de instalação do ZSH Tools + Pluguins 🛠️
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/tools-zsh-install.sh)" -y
 ```
 
-![](/.github/zshtools.png)
+![Executando o Script ZSH Tools](/.github/zshtools.png)
 
-Na tela seguinte entre com `exit` e tecle enter para o sript continuar.
+Na tela seguinte, digite `exit` e pressione Enter para permitir que o script continue.
 
-![](/.github/exit.png)
-
-### Tema Spaceship
+## Tema Spaceship 🌌
 
 <h1 align="center">
   <a href="https://github.com/denysdovhan/spaceship-prompt">
@@ -162,56 +158,55 @@ Na tela seguinte entre com `exit` e tecle enter para o sript continuar.
   <h4>
     <a href="https://denysdovhan.com/spaceship-prompt/">Website</a> |
     <a href="#instalando">Instalando</a> |
-    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/README.md#features">Features</a> |
+    <a href="https://github.com/denys
+
+dovhan/spaceship-prompt/blob/master/README.md#features">Features</a> |
     <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md">Opções</a> |
     <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/API.md">API</a>
   </h4>
 </div>
 
 <div align="center">
-  <sub>Built with ❤︎ by
-  <a href="https://denysdovhan.com">Denys Dovhan</a> and
-  <a href="https://github.com/denysdovhan/spaceship-prompt/graphs/contributors">contributors </a>
+  <sub>Feito com ❤︎ por
+  <a href="https://denysdovhan.com">Denys Dovhan</a> e
+  <a href="https://github.com/denysdovhan/spaceship-prompt/graphs/contributors">colaboradores </a>
 </div>
 
-### Instalando
+### Instalando 🚀
 
 ```bash
 sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
-![](/.github/space-download.png)
 
-### Crie o link simbólico
+![Clonando Spaceship](/.github/space-download.png)
+
+### Crie o link simbólico 🪝
 
 ```bash
 sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
-![](/.github/space-link.png)
 
-### Ativando o tema
+![Criando Link Simbólico](/.github/space-link.png)
 
-Digite `code ~/.zshrc` e tecle enter que abrirá o VS Code para editar o arquivo, edite o campo `ZSH_THEME="fino"` para `ZSH_THEME="spaceship"` e salve. Pronto, você acabou de mudar o tema.
+### Ativando o tema 🌈
 
-![](/.github/spaceship.gif)
+Digite `code ~/.zshrc` e pressione Enter para abrir o VS Code e editar o arquivo. Altere o campo `ZSH_THEME="fino"` para `ZSH_THEME="spaceship"` e salve. Pronto, você acabou de mudar o tema. 🌟
 
-### Pluguins inclusos
+![Editando o arquivo .zshrc](/.github/spaceship.gif)
 
-Esses são os plugins inclusos e abaixo explico como funciona cada um deles:
+### Pluguins inclusos 🧩
 
-- `zdharma/fast-syntax-highlighting`: Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta.
-- `zsh-users/zsh-autosuggestions`: Sugere comandos baseados no histórico de execução conforme você vai digitando.
-- `zsh-users/zsh-completions`: Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos.
+Esses são os plugins inclusos, e abaixo explico como cada um deles funciona:
 
-# Dicas
+- `zdharma/fast-syntax-highlighting`: Adiciona syntax highlighting na hora da escrita de comandos, facilitando principalmente o reconhecimento de comandos digitados incorretamente. 🎨
+- `zsh-users/zsh-autosuggestions`: Sugere comandos baseados no histórico de execução enquanto você digita. 💡
+- `zsh-users/zsh-completions`: Adiciona milhares de completions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc. Você só precisa apertar TAB para completar comandos. 🚀
 
-Você pode acessar toda a estrutura de arquivos da Distro instalada no caminho `\\wsl$` da mesma forma que acessa um servidor, pasta e etc. É possível deixar um mapeamento de rede deste caminho caso preferir.
+# Dicas 💡
 
+Você pode acessar toda a estrutura de arquivos da distribuição Linux instalada no caminho `\\wsl$`, da mesma forma que acessa um servidor, pasta, etc. É possível deixar um mapeamento de rede deste caminho, caso prefira.
 
-Créditos e links de referência: 
+Créditos e links de referência:
 
-
-- [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo)
-- [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/)
-
-
-
+- [@DevMozao](https://dev.to/devmozao/pt-br-rodando-oh-my-zsh-no-windows-86c#0-prologo) 🌐
+- [Rocketseat](https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/) 🚀
