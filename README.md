@@ -1,15 +1,21 @@
 ![fundo](.github/fundo.gif)
-## Como usar o ZSH no Windows Terminal
-### Novidades da versão 2.0.23
 
-O ZSH é um shell interativo que oferece muitas vantagens e funcionalidades para quem trabalha com Linux no Windows. Neste artigo, vamos mostrar como instalar e configurar o ZSH no Windows Terminal, um aplicativo que permite usar vários shells em uma única janela. Além disso, vamos apresentar as novidades da versão 2.0.23 do nosso projeto, que inclui correções de bugs, melhorias de performance e novos recursos.
+## Como usar o ZSH no Windows Terminal
+
+Se você quer ter um terminal mais bonito e personalizado no seu Windows, este guia é para você. Neste guia, você vai aprender a: 
+- Instalar o Windows Terminal, um aplicativo que permite usar vários terminais em uma única janela 
+- Instalar o WSL (Windows Subsystem for Linux), um recurso que permite executar um ambiente Linux dentro do Windows 
+- Instalar o Zsh, um shell interativo que oferece recursos avançados como autocompletar, corretor ortográfico e temas 
+- Instalar o Oh My Zsh, um framework que facilita a configuração e o gerenciamento do Zsh Escolher e aplicar um tema Spaceship 
+
+Com esses passos, você vai transformar o seu terminal em uma ferramenta poderosa e produtiva.
 
 [![CI](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml/badge.svg)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/actions/workflows/main.yml)
 [![Build Status](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_apis/build/status/ErickRock.oh-my-zsh-on-windows-terminal?branchName=main)](https://dev.azure.com/erickgarciadev/oh-my-zsh-on-windows-terminal/_build/latest?definitionId=9&branchName=main)
 [![GitHub forks](https://img.shields.io/github/forks/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/network)
 [![GitHub stars](https://img.shields.io/github/stars/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/ErickRock/oh-my-zsh-on-windows-terminal)](https://github.com/ErickRock/oh-my-zsh-on-windows-terminal/issues)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/erickrock/oh-my-zsh-on-windows-terminal/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=ErickRock%2Foh-my-zsh-on-windows-terminal&benchmark=INFRASTRUCTURE+SECURITY)
+
 
 **Índice**
 
@@ -91,7 +97,7 @@ wsl --set-version <distro name> 2
 
 Substitua `<distro name>` pelo nome da sua distribuição, sem os sinais `<>`. A migração para o WSL 2 começará e, ao terminar, você poderá usar o Linux no Windows 10 vezes mais rápido do que com a versão WSL 1 anterior. 🚀
 
-# Utilizando o Linux 🐧 
+# Utilizando o Linux 🐧
 
 Com todo o ambiente instalado e configurado, você já pode abrir o Windows Terminal e iniciar sua distribuição Linux preferida em novas abas.
 
@@ -105,7 +111,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-win
 
 Após a execução do comando, feche o terminal e abra-o novamente.
 
-Ao reiniciar, escolha a opção 2 e pressione Enter. Feche o terminal novamente e abra-o para continuar com os comandos a seguir. 
+Ao reiniciar, escolha a opção 2 e pressione Enter. Feche o terminal novamente e abra-o para continuar com os comandos a seguir.
 
 ## Execute o script de instalação do ZSH Tools + Pluguins 🛠️
 
@@ -165,8 +171,9 @@ Na tela seguinte, digite `exit` e pressione Enter para permitir que o script con
     <a href="https://github.com/denys
 
 dovhan/spaceship-prompt/blob/master/README.md#features">Features</a> |
-    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md">Opções</a> |
-    <a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/API.md">API</a>
+<a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md">Opções</a> |
+<a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/API.md">API</a>
+
   </h4>
 </div>
 
@@ -210,28 +217,31 @@ Esses são os plugins inclusos, e abaixo explico como cada um deles funciona:
 
 Você pode acessar toda a estrutura de arquivos da distribuição Linux instalada no caminho `\\wsl$`, da mesma forma que acessa um servidor, pasta, etc. É possível deixar um mapeamento de rede deste caminho, caso prefira.
 
-# Changelog 
+# Changelog
 
 ## [2.0.23] - 2023-09-06
 
-### Corrigido 🐛
-- Erro de ortografia na palavra "Pluguins", que agora está escrita corretamente como "Plugins" .
-- Erro de sintaxe no script de instalação do ZSH Tools + Plugins, que agora usa o operador `&&` em vez de `||` para garantir a execução sequencial dos comandos .
-- Bug que impedia o início do ZSH ao fim do script de instalação, que agora usa o comando `exec zsh` para substituir o shell atual pelo ZSH .
+### 🐛 Corrigido
 
-### Melhorado 🚀
-- Processo de integração contínua (CI) no GitHub e no Azure, que agora usa o apt-fast para acelerar a instalação de pacotes no Linux .
-- Tema Spaceship para usar o novo projeto zdharma-continuum zinit, que é um fork do antigo projeto zdharma zinit que foi descontinuado .
+- [Corrigido o erro de ortografia na palavra "Pluguins"], que agora está escrita corretamente como "Plugins". Afinal, não queremos que o nosso ZSH fique plugado, né? 😂
+- [Corrigido o erro de sintaxe no script de instalação do ZSH Tools + Plugins], que agora usa o operador `&&` em vez de `||` para garantir a execução sequencial dos comandos. Assim, evitamos que o script pare no meio do caminho ou faça coisas que não deveria. 🙈
+- [Corrigido o bug que impedia o início do ZSH ao fim do script de instalação], que agora usa o comando `exec zsh` para substituir o shell atual pelo ZSH. Agora sim, podemos desfrutar do nosso ZSH sem precisar fechar e abrir o terminal novamente. 🎉
 
-### Adicionado ➕
-- Temas padrões do Oh My Zsh, que são temas simples e elegantes para o ZSH. Você pode escolher entre os temas robbyrussell, agnoster, bira, candy, etc. .
+### 🚀 Melhorado
 
-¹: [v.2.0.23 Fixed #8, #9](^1^)
-²: [Sintaxe || corrigida para &&](^2^)
-³: [Inicia o zsh ao fim do script](^3^)
-⁴: [implementado apt-fast](^4^)
-⁵: [Update to use new zdharma-continuum zinit project](^5^)
-⁶: [🎨 Adicionado Temas Padrões](^6^)
+- [Melhorado o processo de integração contínua (CI) no GitHub e no Azure], que agora usa o apt-fast para acelerar a instalação de pacotes no Linux. Quem não gosta de uma instalação mais rápida e eficiente, não é mesmo? 😎
+- [Melhorado o tema Spaceship para usar o novo projeto zdharma-continuum zinit], que é um fork do antigo projeto zdharma zinit que foi descontinuado. Assim, garantimos que o nosso tema continue funcionando e recebendo atualizações. Além disso, o nome zdharma-continuum é bem mais legal, parece até filme de ficção científica. 🚀
+
+### ➕ Adicionado
+
+- [Adicionado temas padrões do Oh My Zsh], que são temas simples e elegantes para o ZSH. Você pode escolher entre os temas robbyrussell, agnoster, bira, candy, etc. Tem para todos os gostos e estilos. Qual é o seu favorito? 😍
+
+: [v.2.0.23 Fixed #8, #9]
+: [Sintaxe || corrigida para &&]
+: [Inicia o zsh ao fim do script]
+: [implementado apt-fast]
+: [Update to use new zdharma-continuum zinit project]
+: [🎨 Adicionado Temas Padrões]
 
 Créditos e links de referência:
 
