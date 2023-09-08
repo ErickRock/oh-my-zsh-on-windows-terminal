@@ -19,25 +19,29 @@ Com esses passos, você vai transformar o seu terminal em uma ferramenta poderos
 
 **Índice**
 
-- [Novidades da versão 2.0.23](#novidades-da-versão-2023) 🆕
-- [Requisitos mínimos](#requisitos-mínimos) 🛠️
-  - [Visual Studio Code + Remote WSL](#visual-studio-code--remote-wsl) 💻
-  - [Baixe e instale a fonte FiraCode Light TTF](#baixe-e-instale-a-fonte-firacode-light-ttf) 🌟
-  - [Habilite o Hyper-V e o WSL via Powershell Admin](#habilite-o-hyper-v-e-o-wsl-via-powershell-admin) ⚙️
-  - [Instale uma Distro linux](#instale-uma-distro-linux) 🐧
-  - [Instale o Windows Terminal](#instale-o-windows-terminal) 🪟
-  - [Atualizando o Kernel Linux no Windows](#atualizando-o-kernel-linux-no-windows) 🔄
-    - [Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows)](#migrar-a-distro-existente-para-wsl-2-utilizará-o-kernel-nativo-do-linux-no-windows) 🚀
-- [Utilizando o Linux](#utilizando-o-linux) 💡
-  - [Execute o script de instalação do ZSH](#execute-o-script-de-instalação-do-zsh) 🖥️
-    - [Execute o script de instalação do ZSH Tools + Pluguins](#execute-o-script-de-instalação-do-zsh-tools--pluguins) 🛠️
-    - [Tema Spaceship](#tema-spaceship) 🌌
-    - [Instalando](#instalando) 🚀
-    - [Crie o link simbólico](#crie-o-link-simbólico) 🪝
-    - [Ativando o tema](#ativando-o-tema) 🌈
-    - [Pluguins inclusos](#pluguins-inclusos) 🧩
-    - [Changelog](#changelog) 📝
-- [Dicas](#dicas) 💡
+- [Requisitos mínimos 🛠️](#requisitos-mínimos-️)
+- [Visual Studio Code + Remote WSL 💻](#visual-studio-code--remote-wsl-)
+- [Baixe e instale a fonte FiraCode Light TTF 🌟](#baixe-e-instale-a-fonte-firacode-light-ttf-)
+- [Habilite o Hyper-V e o WSL via Powershell Admin ⚙️](#habilite-o-hyper-v-e-o-wsl-via-powershell-admin-️)
+- [Instale uma Distro Linux 🐧](#instale-uma-distro-linux-)
+- [Instale o Windows Terminal 🪟](#instale-o-windows-terminal-)
+- [Atualizando o Kernel Linux no Windows 🔄](#atualizando-o-kernel-linux-no-windows-)
+  - [Migrar a distro Existente para WSL 2 (Utilizará o Kernel nativo do Linux no Windows) 🚀](#migrar-a-distro-existente-para-wsl-2-utilizará-o-kernel-nativo-do-linux-no-windows-)
+- [Utilizando o Linux 🐧](#utilizando-o-linux-)
+  - [Execute o script de instalação do ZSH 🖥️](#execute-o-script-de-instalação-do-zsh-️)
+  - [Execute o script de instalação do ZSH Tools + Pluguins 🛠️](#execute-o-script-de-instalação-do-zsh-tools--pluguins-️)
+  - [Tema Spaceship 🌌](#tema-spaceship-)
+    - [Instalando 🚀](#instalando-)
+    - [Crie o link simbólico 🪝](#crie-o-link-simbólico-)
+    - [Ativando o tema 🌈](#ativando-o-tema-)
+    - [Pluguins inclusos 🧩](#pluguins-inclusos-)
+- [Dicas 💡](#dicas-)
+- [Changelog](#changelog)
+  - [\[2.0.23\] - 2023-09-06](#2023---2023-09-06)
+    - [🐛 Corrigido](#-corrigido)
+    - [🚀 Melhorado](#-melhorado)
+    - [➕ Adicionado](#-adicionado)
+
 
 # Requisitos mínimos 🛠️
 
@@ -236,12 +240,19 @@ Você pode acessar toda a estrutura de arquivos da distribuição Linux instalad
 
 - [Adicionado temas padrões do Oh My Zsh], que são temas simples e elegantes para o ZSH. Você pode escolher entre os temas robbyrussell, agnoster, bira, candy, etc. Tem para todos os gostos e estilos. Qual é o seu favorito? 😍
 
-: [v.2.0.23 Fixed #8, #9]
-: [Sintaxe || corrigida para &&]
-: [Inicia o zsh ao fim do script]
-: [implementado apt-fast]
-: [Update to use new zdharma-continuum zinit project]
-: [🎨 Adicionado Temas Padrões]
+
+¹: [v.2.0.23 Fixed #8, #9](^1^)
+
+²: [Sintaxe || corrigida para &&](^2^)
+
+³: [Inicia o zsh ao fim do script](^3^)
+
+⁴: [implementado apt-fast](^4^)
+
+⁵: [Update to use new zdharma-continuum zinit project](^5^)
+
+⁶: [🎨 Adicionado Temas Padrões](^6^)
+
 
 Créditos e links de referência:
 
