@@ -1,236 +1,393 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-//DeafaultProfile você pode definir o Terminal padrão ao abrir o Windows Terminal
-//O Valor deve ser referencia ao atributo "name" ou "guid" do Profile List
-    "defaultProfile": "🌌 Windows PowerShell",
-    "requestedTheme" : "system",
-    "showTabsInTitlebar" : true,
-    "showTerminalTitleInTitlebar" : true,
-    "wordDelimiters" : " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502",
-    "snapToGridOnResize": true,
-    "initialCols": 110,
-    "initialRows": 27,
-    "copyOnSelect": false,
-    "copyFormatting": false,
-
-    "profiles":
-    {
-        "defaults":
+    "actions": 
+    [
         {
-            // Configuração replicada para todos os perfis
-            "colorScheme" : "Dracula",
-            "fontFace": "Fira Code",
-            "fontSize": 10,
-            // "startingDirectory" : "%USERPROFILE%",
-            "useAcrylic" : false,
-            "cursorColor" : "#FFFFFF"
-            
-          
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
         },
-        "list":
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    "alwaysShowNotificationIcon": true,
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "initialCols": 111,
+    "initialRows": 25,
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "backgroundImageOpacity": 0.8,
+            "colorScheme": "Campbell",
+            "font": 
+            {
+                "face": "FiraCode Nerd Font",
+                "size": 10.0
+            },
+            "intenseTextStyle": "all",
+            "opacity": 100,
+            "padding": "3",
+            // "startingDirectory": "D:\\Repos",
+            "useAcrylic": false,
+            "useAtlasEngine": true
+        },
+        "list": 
         [
             {
+                "backgroundImageOpacity": 0.89,
+                "colorScheme": "CyberPunkUmbra",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "🌌 Windows PowerShell",
-                "commandline": "powershell.exe",
-                "colorScheme": "cyberpunk",
                 "hidden": false,
-                "useAcrylic": false,
-                "fontFace": "Cascadia Code PL",
-                "suppressApplicationTitle": true,
-                "startingDirectory": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\Projetos"
-
+                "name": "PowerShell \u26a1",
+                "opacity": 90,
+                //"startingDirectory": "D:\\Repos",
+                "useAcrylic": false
             },
             {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "☄ Prompt de comando",
-                "commandline": "cmd.exe",
                 "hidden": false,
-                "colorScheme": "Dracula CMD",
-                "useAcrylic": true,
-                "background": "#21222C",
-                
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "colorScheme": "Ubuntu",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "icon":"C:/SysIcon/Ubuntu.png"
+                "name": "Prompt de comando"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "🌠 Azure Cloud Shell",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "colorScheme": "Ubuntu",
-                "hidden": false,
-                "name": "Ubuntu 20.04",
-                "source": "Windows.Terminal.Wsl",
-                "icon":"C:/SysIcon/Ubuntu.png",
-                "backgroundImage": "https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png",
-                "backgroundImageOpacity": 1,
-                "backgroundImageStretchMode": "uniform",
-                "backgroundImageAlignment": "bottomRight"
-                
-            },
-            {
-                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
-                "colorScheme": "Ubuntu",
-                "hidden": false,
-                "name": "🪐Kali Linux",
-                "source": "Windows.Terminal.Wsl",
-                "icon":"C:/SysIcon/Kali-linux.png",
-                "suppressApplicationTitle": true
-                
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "colorScheme": "cyberpunk",
-                "hidden": false,
-                "name": "🌟 Powershell",
-                "fontFace": "Cascadia Code PL",
-                "source": "Windows.Terminal.PowershellCore",
-                "tabTitle": "🌟 Powershell",
-                "suppressApplicationTitle": true,
-                "startingDirectory": "C:\\Users\\erick\\OneDrive\\Área de Trabalho\\Projetos"
-                
             }
         ]
     },
-
-    // Add custom color schemes to this array.
-    // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
-    "schemes": [
-        {
-            "name" : "Dracula",
-            "background" : "#282A36",
-            "black" : "#21222C",
-            "blue" : "#BD93F9",
-            "brightBlack" : "#6272A4",
-            "brightBlue" : "#D6ACFF",
-            "brightCyan" : "#A4FFFF",
-            "brightGreen" : "#69FF94",
-            "brightPurple" : "#FF92DF",
-            "brightRed" : "#FF6E6E",
-            "brightWhite" : "#FFFFFF",
-            "brightYellow" : "#FFFFA5",
-            "cyan" : "#8BE9FD",
-            "foreground" : "#F8F8F2",
-            "green" : "#50FA7B",
-            "purple" : "#FF79C6",
-            "red" : "#FF5555",
-            "white" : "#F8F8F2",
-            "yellow" : "#F1FA8C"
-        },
-        {
-            "name": "cyberpunk",
-            "black": "#000000",
-            "red": "#ff7092",
-            "green": "#00fbac",
-            "yellow": "#fffa6a",
-            "blue": "#00bfff",
-            "purple": "#df95ff",
-            "cyan": "#86cbfe",
-            "white": "#ffffff",
-            "brightBlack": "#000000",
-            "brightRed": "#ff8aa4",
-            "brightGreen": "#21f6bc",
-            "brightYellow": "#fff787",
-            "brightBlue": "#1bccfd",
-            "brightPurple": "#e6aefe",
-            "brightCyan": "#99d6fc",
-            "brightWhite": "#ffffff",
-            "background": "#332a57",
-            "foreground": "#e5e5e5"
-          },
-        {
-            "name": "Blue Matrix",
-            "black": "#101116",
-            "red": "#ff5680",
-            "green": "#00ff9c",
-            "yellow": "#fffc58",
-            "blue": "#00b0ff",
-            "purple": "#d57bff",
-            "cyan": "#76c1ff",
-            "white": "#c7c7c7",
-            "brightBlack": "#686868",
-            "brightRed": "#ff6e67",
-            "brightGreen": "#5ffa68",
-            "brightYellow": "#fffc67",
-            "brightBlue": "#6871ff",
-            "brightPurple": "#d682ec",
-            "brightCyan": "#60fdff",
-            "brightWhite": "#ffffff",
-            "background": "#1d2342",
-            "foreground": "#b8ffe1"
-        },
-        {
-            "name" : "Dracula CMD",
-                "background" : "#282A36",
-                "black" :  "#21222C",
-                "blue" : "#BD93F9",
-                "brightBlack" : "#6272A4",
-                "brightBlue" : "#D6ACFF",
-                "brightCyan" : "#A4FFFF",
-                "brightGreen" : "#69FF94",
-                "brightPurple" : "#FF92DF",
-                "brightRed" : "#FF6E6E",
-                "brightWhite" : "#FFFFFF",
-                "brightYellow" : "#FFFFA5",
-                "cyan" : "#8BE9FD",
-                "foreground" : "#F8F8F2",
-                "green" : "#50FA7B",
-                "purple" : "#FF79C6",
-                "red" : "#FF5555",
-                "white" : "#F8F8F2",
-                "yellow" : "#F1FA8C"
-        },
-        {
-            "name": "Ubuntu",
-            "black": "#2e3436",
-            "red": "#cc0000",
-            "green": "#4e9a06",
-            "yellow": "#c4a000",
-            "blue": "#3465a4",
-            "purple": "#75507b",
-            "cyan": "#06989a",
-            "white": "#d3d7cf",
-            "brightBlack": "#555753",
-            "brightRed": "#ef2929",
-            "brightGreen": "#8ae234",
-            "brightYellow": "#fce94f",
-            "brightBlue": "#729fcf",
-            "brightPurple": "#ad7fa8",
-            "brightCyan": "#34e2e2",
-            "brightWhite": "#eeeeec",
-            "background": "#300a24",
-            "foreground": "#eeeeec"
-          }
-    ],
-
-    // Add custom keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
-    "keybindings":
+    "schemes": 
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
-
-        // Press Ctrl+Shift+F to open the search box
-        { "command": "find", "keys": "ctrl+shift+f" },
-
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
-        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
-    ]
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#012456",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell Powershell",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#100D23",
+            "black": "#272932",
+            "blue": "#00B0FF",
+            "brightBlack": "#7B8097",
+            "brightBlue": "#76C1FF",
+            "brightCyan": "#37EBF3",
+            "brightGreen": "#00FF9C",
+            "brightPurple": "#CB1DCD",
+            "brightRed": "#F02C35",
+            "brightWhite": "#C1DEFF",
+            "brightYellow": "#FFFC4C",
+            "cursorColor": "#FDF500",
+            "cyan": "#00D0DB",
+            "foreground": "#04FF87",
+            "green": "#1AC5B0",
+            "name": "CyberPunkUmbra",
+            "purple": "#742D8B",
+            "red": "#F02C35",
+            "selectionBackground": "#5E35B1",
+            "white": "#D1C5C0",
+            "yellow": "#FDF500"
+        },
+        {
+            "background": "#282C34",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#98C379",
+            "name": "One Half Dark",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
+        {
+            "background": "#FAFAFA",
+            "black": "#383A42",
+            "blue": "#0184BC",
+            "brightBlack": "#4F525D",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B5C1",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C577DD",
+            "brightRed": "#DF6C75",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#E4C07A",
+            "cursorColor": "#4F525D",
+            "cyan": "#0997B3",
+            "foreground": "#383A42",
+            "green": "#50A14F",
+            "name": "One Half Light",
+            "purple": "#A626A4",
+            "red": "#E45649",
+            "selectionBackground": "#FFFFFF",
+            "white": "#FAFAFA",
+            "yellow": "#C18301"
+        },
+        {
+            "background": "#002B36",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2AA198",
+            "foreground": "#839496",
+            "green": "#859900",
+            "name": "Solarized Dark",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#FDF6E3",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#002B36",
+            "cyan": "#2AA198",
+            "foreground": "#657B83",
+            "green": "#859900",
+            "name": "Solarized Light",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEC",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#06989A",
+            "foreground": "#D3D7CF",
+            "green": "#4E9A06",
+            "name": "Tango Dark",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        },
+        {
+            "background": "#FFFFFF",
+            "black": "#000000",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEC",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#000000",
+            "cyan": "#06989A",
+            "foreground": "#555753",
+            "green": "#4E9A06",
+            "name": "Tango Light",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-22.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#000080",
+            "brightBlack": "#808080",
+            "brightBlue": "#0000FF",
+            "brightCyan": "#00FFFF",
+            "brightGreen": "#00FF00",
+            "brightPurple": "#FF00FF",
+            "brightRed": "#FF0000",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFF00",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#008080",
+            "foreground": "#C0C0C0",
+            "green": "#008000",
+            "name": "Vintage",
+            "purple": "#800080",
+            "red": "#800000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#C0C0C0",
+            "yellow": "#808000"
+        }
+    ],
+    "startOnUserLogin": true,
+    "themes": 
+    [
+        {
+            "name": "legacyDark",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacyLight",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "light",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacySystem",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "system",
+                "useMica": false
+            }
+        }
+    ],
+    "useAcrylicInTabRow": true
 }
