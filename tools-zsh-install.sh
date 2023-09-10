@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 # Script de instalação - ZSH Tools + Autocomplete
-# Autor: @rickkgarciia e @ed_lsba - Twitter
+# Autor: @garciaeriickk e @ed_lsba - Twitter
 # Descrição: Instalação do tema Spaceship padrão - em construção
 
 # Verificação do diretório inicial
@@ -14,7 +14,7 @@ fi
 # Instalação do Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
    echo -e "\e[33mIniciando instalação do Oh-my-zsh...\e[0m"
-   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
    echo -e "\e[32mOh-my-zsh já está instalado\e[0m"
 fi
