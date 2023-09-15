@@ -108,7 +108,7 @@ Com todo o ambiente instalado e configurado, você já pode abrir o Windows Term
 ## Execute o script de instalação do ZSH 🖥️
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/zsh-install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/zsh-install.sh)"
 ```
 
 ![Executando o Script ZSH Install](/.github/zshinstall.png)
@@ -120,7 +120,7 @@ Ao reiniciar, escolha a opção 2 e pressione Enter. Feche o terminal novamente 
 ## Execute o script de instalação do ZSH Tools + Pluguins 🛠️
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/tools-zsh-install.sh)" -y
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/tools-zsh-install.sh)" -y
 ```
 
 ![Executando o Script ZSH Tools](/.github/zshtools.png)
