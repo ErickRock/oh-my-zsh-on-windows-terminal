@@ -14,7 +14,7 @@ fi
 # Instalação do Oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
    echo -e "\e[33mIniciando instalação do Oh-my-zsh...\e[0m"
-   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   yes | bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
    echo -e "\e[32mOh-my-zsh já está instalado\e[0m"
 fi
@@ -62,7 +62,7 @@ SPACESHIP_CHAR_SUFFIX=" "
 # Instalação do Zinit com plugins
 if [ ! -d "$HOME/.zinit" ]; then
    echo -e "\e[33mIniciando instalação do Zinit com plugins...\e[0m"
-   sh -c "$(curl -fsSL https://git.io/zinit-install)"
+   bash -c "$(curl -fsSL https://git.io/zinit-install)"
 else
    echo -e "\e[32mZinit já está instalado\e[0m"
 fi
