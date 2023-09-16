@@ -111,6 +111,7 @@ Com todo o ambiente instalado e configurado, você já pode abrir o Windows Term
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/zsh-install.sh)"
 ```
 
+<!-- #TODO: Atualizar imagem com comando correto `bash` -->
 ![Executando o Script ZSH Install](/.github/zshinstall.png)
 
 Após a execução do comando, feche o terminal e abra-o novamente.
@@ -119,6 +120,7 @@ Ao reiniciar, escolha a opção 2 e pressione Enter. Feche o terminal novamente 
 
 ## Execute o script de instalação do ZSH Tools + Pluguins 🛠️
 
+<!-- #TODO: Atualizar imagem com comando correto `bash` -->
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ErickRock/oh-my-zsh-on-windows-terminal/main/tools-zsh-install.sh)" -y
 ```
